@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/main_.css">
+    <script src="/js/main.js"></script>
+    <script src="/js/carta-dc.js"></script>
+    <link rel="icon" href="/assets/img/logo.png" type="image/png">
+    <title>HEROES MARVEL</title>
+</head>
+<body>
+  <header>
+    <img id="logo" src="/assets/img/logo.png" alt="Logo" />
+    <nav>
+      <a href="../index.html"><button id="btn-home" class="nav-button">Home</button></a>
+      <a href="/html/dc.html"><button id="btn-dc" class="nav-button">DC</button></a>
+      <button id="btn-marvel" class="nav-button active">Marvel</button>
+      <a href="/html/arena.html"><button id="btn-arena" class="nav-button">Arena</button></a>
+    </nav>
+  </header>
+  <video autoplay muted loop id="fondo-video">
+    <source src="/assets/video/marvel.mp4" type="video/mp4">
+    Tu navegador no soporta el video de fondo.
+  </video>
+  <!-- TODO: terminar de pulir las cartas porque la informacion no cumple con los requerimientos (boton de ver mas, ventana emergente con la informacion y que la ventana origina muestre solo la imagen y el nombre clave, tener en cuenta la informacion del JSON y usar mas el JS.) -->
+  <div class="heroes">
+    <cartas-dc
+      name="Tony Stark"
+      alias="Iron man"
+      estudio="Marvel"
+      presentacion="1939"
+      descripcion="Batman, también conocido como el Caballero de la Noche o el Hombre Murciélago"
+      imagen="/assets/img/Iron_Man.jpg">
+    </cartas-dc>
+    <cartas-dc
+      name="Peter Parker"
+      alias="Spiderman"
+      estudio="Marvel"
+      presentacion="1940"
+      descripcion="Batman, también conocido como el Caballero de la Noche o el Hombre Murciélago"
+      imagen="/assets/img/spiderman.jpg">
+    </cartas-dc>
+    <cartas-dc
+      name="Marc Spector"
+      alias="Moon Knight"
+      estudio="Marvel"
+      presentacion="1940"
+      descripcion="Batman, también conocido como el Caballero de la Noche o el Hombre Murciélago"
+      imagen="/assets/img/Moon_Knight.jpg">
+    </cartas-dc>
+    <cartas-dc
+      name="Matt Murdock"
+      alias="Daredevil"
+      estudio="Marvel"
+      presentacion="1959"
+      descripcion="Batman, también conocido como el Caballero de la Noche o el Hombre Murciélago"
+      imagen="/assets/img/Daredevil.jpg">
+    </cartas-dc>
+    <cartas-dc
+      name="Eddie Brock"
+      alias="Venom"
+      estudio="Marvel"
+      presentacion="1938"
+      descripcion="Batman, también conocido como el Caballero de la Noche o el Hombre Murciélago"
+      imagen="/assets/img/Venom.jpg">
+    </cartas-dc>
+  </div>
+</body>
+</html>
