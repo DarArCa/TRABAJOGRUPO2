@@ -18,17 +18,8 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 20px; /* Espacio entre las cartas */
-  justify-content: center; /* Centra las cartas en la fila */
-  
+  justify-content: center; /* Centra las cartas en la fila */ 
 }
-
-
-
-
-
-
-
-
 
 @keyframes background_animation {
   0% {
@@ -81,6 +72,7 @@ header {
   transition: all 1s ease;
   /* sombreado de la imagen del logo */
   box-shadow: 0 0 15px rgba(91, 192, 190, 0.3);
+  height: auto;
 }
 
 /* para que al momento de pasar el cursor por la imagen se haga un efecto de aumento */
@@ -158,16 +150,16 @@ main {
 
 .homecont{
   display: flex;
-    background-color: rgba(0, 0, 0, 0.5);
-    width: 70rem;
-    margin-left: 10%;
-    margin-right: 10%;
-    color: white;
-    padding: 10rem;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 70rem;
+  margin-left: 10%;
+  margin-right: 10%;
+  color: white;
+  padding: 10rem;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .imagen-container img {
@@ -181,7 +173,7 @@ main {
   font-size: 1.5rem;
   color: #fff;
   line-height: 1.6;
-  max-width: 60rem;
+  max-width: 100%;
   margin: 0 auto;
 }
 
@@ -206,97 +198,6 @@ h1{
   }
 }
 
-
-/* TODO: este responsive tengo que revisarlo porque no esta en rem o dvh */
-/* celulares */
-@media (max-width: 768px) {
-  body {
-    margin: 0;
-    background-size: cover;
-    background-position: center;
-    height: auto;
-    min-height: 100dvh;
-    font-size: 1rem;
-  }
-  header {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem 2rem;
-    height: auto;
-    box-sizing: border-box;
-    gap: 1rem;
-  }
-  #logo {
-    width: 4.5rem;
-    border-radius: 50%;
-    height: auto;
-  }
-  nav {
-    flex: 1;
-    display: flex;
-    justify-content: center; /* CENTRADO */
-    gap: 0.7rem;
-    /* el wrap para que aparezcan los 4 sin deslizar la pantalla */
-    flex-wrap: wrap;
-  }
-  .nav-button {
-    background-color: transparent;
-    border: 1px solid #fff;
-    padding: 0.6rem 1.2rem;
-    font-size: 1rem;
-    color: #fff;
-    border-radius: 8px;
-    cursor: pointer;/* TEXTO MÁS GRANDE */
-  }
-  main {
-    padding: 1.5rem 1rem;
-    text-align: center;
-  }
-  .imagen-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 100%;
-  }
-  .imagen-container img {
-    width: 100%;
-    max-width: 15rem;
-    height: auto;
-  }
-  .texto-contenido {
-    font-size: 1.2rem;
-    color: #fff;
-    line-height: 1.6;
-    max-width: 90%;
-    margin: 0 auto;
-  }
-  h1{
-    font-size: 1.6rem;
-    margin-bottom: 1.5rem;
-    position: relative;
-    display: inline-block;
-  }
-}
-
-/* tablets */
-@media (max-width: 1024px) {
-  header {
-    flex-direction: column;
-  }
-}
-
-/* explicacion de las animaciones personalizadas. Estructura basica: 
-@keyframes nombreDeLaAnimacion {
-  0%   { propiedad: valor_inicial; }
-  100% { propiedad: valor_final; }
-} */
-
-/* Luego se aplica el nombre de la animacion a una clase o aja.
-.elemento {
-  animation: nombreDeLaAnimacion 2s ease-in-out infinite;
-} */
 
 footer{
   font-style: italic;
@@ -355,7 +256,7 @@ button{
   margin-top: 30px;
 }
 .contenedor-arena{
-    width: 100%;
+  width: 100%;
   height: auto;
   background-color: #00000066;
   display: flex;              /* Activa Flexbox */
@@ -369,3 +270,137 @@ button{
 .boton-header{
   background-color: rgba(134, 6, 6, 0.829);
 }
+
+
+/* TODO: este responsive tengo que revisarlo porque no esta en rem o dvh */
+@media (max-width: 768px) {
+  body {
+    margin: 0;
+    background-size: cover;
+    background-position: center;
+    height: auto;
+    min-height: 100dvh;
+    font-size: 1rem;
+  }
+  header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    height: auto;
+    box-sizing: border-box;
+    gap: 1rem;
+  }
+  #logo {
+    width: 4.5rem;
+    border-radius: 50%;
+    height: auto;
+  }
+  nav {
+    flex: 1;
+    display: flex;
+    justify-content: center; /* CENTRADO */
+    gap: 0.7rem;
+    /* el wrap para que aparezcan los 4 sin deslizar la pantalla */
+    flex-wrap: wrap;
+  }
+  .nav-button {
+    background-color: transparent;
+    border: 1px solid #fff;
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    color: #fff;
+    border-radius: 8px;
+    cursor: pointer;/* TEXTO MÁS GRANDE */
+  }
+  main {
+    padding: 1.5rem 1rem;
+    text-align: center;
+  }
+
+.homecont {
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 20rem;
+  color: white;
+  padding: 2rem; 
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: none;        
+  box-shadow: none;    
+  outline: none;       
+}
+
+
+  .imagen-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+  }
+  .imagen-container img {
+    width: 100%;
+    max-width: 15rem;
+    height: auto;
+  }
+  .texto-contenido {
+    font-size: 1.2rem;
+    color: #fff;
+    line-height: 1.6;
+    max-width: 90%;
+    margin: 0 auto;
+  }
+  h1{
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block;
+  }
+}
+@media (min-width: 768px) and (max-width: 1550px) {
+  #logo {
+    width: 4.5rem;
+    height: auto;
+  }
+  .nav-button {
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+  }
+
+  .homecont {
+    width: 100%;
+    max-width: 60rem;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    font-size: 1rem;
+  }
+  .texto-contenido {
+    max-width: 90%;
+  }
+  /* .contenedor-arena {
+    flex-direction: row;
+    gap: 1rem;
+  }
+  .botonarena {
+    width: 150px;
+    height: 60px;
+  }
+  .botonarena h1 {
+    font-size: 1rem;
+  } */
+}
+
+
+/* explicacion de las animaciones personalizadas. Estructura basica: 
+@keyframes nombreDeLaAnimacion {
+  0%   { propiedad: valor_inicial; }
+  100% { propiedad: valor_final; }
+} */
+
+/* Luego se aplica el nombre de la animacion a una clase o aja.
+.elemento {
+  animation: nombreDeLaAnimacion 2s ease-in-out infinite;
+} */

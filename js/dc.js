@@ -4,7 +4,7 @@ class Cartasdc extends HTMLElement {
     this.attachShadow({ mode: 'open' });
     
     this.shadowRoot.innerHTML = /* HTML */ `
-    <!-- con el host se aplicacan estilos especificos a la etiqueta del html, es decir, a la carta -->
+    <!-- con el host se aplican estilos especificos a la etiqueta del html, es decir, a la carta -->
       <style>
         :host {
           display: inline-block;
@@ -29,9 +29,8 @@ class Cartasdc extends HTMLElement {
           transition: transform 1s;
           transition: transform 0.4s ease, box-shadow 0.4s ease;
           cursor: pointer;
-          
         }
-          .card:hover {
+        .card:hover {
           transform: translateY(-10px) scale(1.03) rotateZ(1deg);
           box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
         }
@@ -147,7 +146,7 @@ class Cartasdc extends HTMLElement {
             </div>
             <div class="stat">
               <div id="damage-value" class="stat-value">-</div>
-              <div class="stat-label">Daño</div>
+              <div class="stat-label">Resistencia</div>
             </div>
           </div>
           
@@ -213,12 +212,7 @@ const personajesDC = [
   { nombre: "Superman", imagen: "/assets/img/superman.jpg" },
   { nombre: "Flash", imagen: "/assets/img/flash.jpg" },
   { nombre: "Joker", imagen: "/assets/img/guason.jpg" },
-  { nombre: "Green Lantern", imagen: "/assets/img/greenlintern.jpg" },
-  { nombre: "Moon Knight", imagen: "/assets/img/moon_knight.jpg" },
-  { nombre: "Venom", imagen: "/assets/img/venom.jpg" },
-  { nombre: "Spiderman", imagen: "/assets/img/spiderman.jpg" },
-  { nombre: "Iron Man", imagen: "/assets/img/iron_man.jpg" },
-  { nombre: "Daredevil", imagen: "/assets/img/daredevil.jpg" }
+  { nombre: "Green Lantern", imagen: "/assets/img/greenlintern.jpg" }
 ];
 
 customElements.define('cartas-dc', Cartasdc);

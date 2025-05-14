@@ -29,7 +29,7 @@ class CartasMarvel extends HTMLElement {
           transition: transform 1s;
           transition: transform 0.4s ease, box-shadow 0.4s ease;
           cursor: pointer;
-          background-color: #000;
+          
         }
         .card:hover {
           transform: translateY(-10px) scale(1.03) rotateZ(1deg);
@@ -151,7 +151,7 @@ class CartasMarvel extends HTMLElement {
             </div>
             <div class="stat">
               <div id="damage-value" class="stat-value">-</div>
-              <div class="stat-label">Daño</div>
+              <div class="stat-label">Resistencia</div>
             </div>
           </div>
           
@@ -212,11 +212,11 @@ class CartasMarvel extends HTMLElement {
 //lo mismo aqui
 // Ejemplo: en carta-marvel.js
 const personajesMarvel = [
+  { nombre: "Moon Knight", imagen: "/assets/img/moon_knight.jpg" },
+  { nombre: "Venom", imagen: "/assets/img/venom.jpg" },
   { nombre: "Spiderman", imagen: "/assets/img/spiderman.jpg" },
-  { nombre: "Ironman", imagen: "/assets/img/ironman.jpg" },
-  { nombre: "Thor", imagen: "/assets/img/thor.jpg" },
-  { nombre: "Hulk", imagen: "/assets/img/hulk.jpg" },
-  { nombre: "Black Widow", imagen: "/assets/img/blackwidow.jpg" }
+  { nombre: "Iron Man", imagen: "/assets/img/iron_man.jpg" },
+  { nombre: "Daredevil", imagen: "/assets/img/daredevil.jpg" }
 ];
 
 
