@@ -14,6 +14,49 @@ body {
   animation: background_animation 2s infinite alternate;
 }
 
+.heroes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Espacio entre las cartas */
+  justify-content: center; /* Centra las cartas en la fila */
+}
+
+.carta {
+  width: 300px; /* Ancho fijo para cada carta */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  transition: transform 0.3s ease;
+}
+
+.carta:hover {
+  transform: translateY(-5px); /* Efecto de elevación al pasar el mouse */
+}
+
+.carta img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.carta .contenido {
+  padding: 15px;
+}
+
+.carta .contenido h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.carta .contenido p {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+
 @keyframes background_animation {
   0% {
     background-color: #0b132b;
@@ -27,7 +70,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #1C2541;
+  background-color: #111113;
   padding: 0 3rem;
   height: 10rem; /* AUMENTADO */
   box-sizing: border-box;
@@ -95,14 +138,14 @@ nav {
 }
 
 .nav-button:hover{
-  background-color: #3A506B;
+  background-color: #7d0f0f;
   transform: translateY(-5px);
   transition: all 0.5s ease;
   box-shadow: 0px 10px 20px rgb(191, 196, 201, );
 }
 
 .nav-button.active {
-  background-color: #5BC0BE;
+  background-color: #650d0de2;
   transition: all 0.5s ease;
   color: #000;
   box-shadow: 0px 4px 20px rgb(14, 19, 34) ;
@@ -120,7 +163,7 @@ nav {
 }
 
 .nav-button.active:hover{
-  background-color: #3A506B;
+  background-color: #650000c7;
   transform: translateY(-10px);
   transition: all 0.3s ease;
   box-shadow: 30px 30px 30px rgb(191, 196, 201, );
@@ -134,9 +177,10 @@ main {
 .imagen-container {
   display: flex;
   justify-content: center;
+  flex-direction: column;
   margin-bottom: 0px;
   overflow: hidden;
-  height: 24rem;
+  
 }
 
 .imagen-container img {
@@ -163,7 +207,7 @@ h1{
   display: inline-block;
   text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   /* practicamente copie y pegue la misma animacion del fondo de la pagina principal */
-  animation: bright 3s infinite alternate;
+  animation: 3s infinite alternate;
 }
 
 @keyframes bright {
@@ -274,7 +318,7 @@ footer{
   
 }
 .botonarena{
-  margin-left: 45%;
+  
   margin-top: 0%;
   width: 160px;
   height: 70px;
@@ -290,4 +334,53 @@ button{
   padding: 10px;
   border-style: double;
   border-radius: 20px 20px;
+}
+/*jueguen con los colores del texto del index*/
+@keyframes fuego {
+  0% {
+    text-shadow: 0 0 5px rgb(135, 102, 255), 0 0 10px rgb(61, 22, 170), 0 0 15px rgb(37, 0, 48);
+    color: #fff;
+  }
+  50% {
+    text-shadow: 0 0 10px rgb(135, 102, 255), 0 0 20px rgb(61, 22, 170), 0 0 30px rgb(37,0,48);
+    color: rgb(45, 8, 59);
+  }
+  100% {
+    text-shadow: 0 0 5px rgb(135, 102, 255), 0 0 10px rgb(61, 22, 170), 0 0 15px rgb(37,0,48);
+    color: #fff;
+  }
+}
+
+.texto-fuego {
+  font-size: 5rem;
+  font-weight: bold;
+  text-align: center;
+  color: #fff;
+  animation: fuego 1s infinite;
+  font-family: 'Impact', sans-serif;
+  margin-top: 30px;
+}
+.texto-index-fuego {
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+  color: #fff;
+  animation: fuego 3s infinite;
+  font-family: "Bangers", cursive;
+  margin-top: 30px;
+}
+.contenedor-arena{
+    width: 100%;
+  height: auto;
+  background-color: #00000066;
+  display: flex;              /* Activa Flexbox */
+  flex-direction: row;        /* Alinea en fila (horizontal) */
+  justify-content: center;    /* Centra horizontalmente los ítems (opcional) */
+  align-items: center;        /* Centra verticalmente los ítems (opcional) */
+  gap: 4px;
+  flex-wrap: wrap;            /* Permite que los elementos se envuelvan hacia abajo */    
+}
+
+.boton-header{
+  background-color: rgba(134, 6, 6, 0.829);
 }

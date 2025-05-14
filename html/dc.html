@@ -4,9 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HEROES DC</title>
-  <script src="/js/carta-dc.js"></script>
+  <script src="/js/main.js" defer></script>
+  <script src="/js/carta-dc.js" defer></script>
   <link rel="stylesheet" href="/css/main.css">
   <link rel="stylesheet" href="/css/main_.css">
+  
   <link rel="icon" href="/assets/img/logo.png" type="image/png">
 </head>
 <body>
@@ -19,10 +21,13 @@
       <a href="/html/arena.html"><button id="btn-arena" class="nav-button">Arena</button></a>
     </nav>
   </header>
-  <!-- TODO: terminar de pulir las cartas porque la informacion no cumple con los requerimientos (boton de ver mas, ventana emergente con la informacion y que la ventana origina muestre solo la imagen y el nombre clave, tener en cuenta la informacion del JSON y usar mas el JS.) -->
-  <!-- TODO: como funcion opcional se podria agregar una barra de busqueda para los heroes -->
+  <video autoplay muted loop id="fondo-video">
+    <source src="/assets/video/marvel.mp4" type="video/mp4" />
+    Tu navegador no soporta el video de fondo.
+  </video>
   <div class="heroes">
-    <cartas-dc
+    <div class="carta">
+      <cartas-dc
       name="Bruce Wayne"
       alias="Batman"
       estudio="DC"
@@ -30,7 +35,9 @@
       descripcion="Batman, también conocido como el Caballero de la Noche o el Hombre Murciélago"
       imagen="/assets/img\/batman.jpg">
     </cartas-dc>
-    <cartas-dc
+    </div>
+    <div class="carta">
+      <cartas-dc
       name="Jack Oswald white"
       alias="Joker"
       estudio="DC"
@@ -38,7 +45,9 @@
       descripcion="Batman, también conocido como el Caballero de la Noche o el Hombre Murciélago"
       imagen="/assets/img\/guason.jpg">
     </cartas-dc>
-    <cartas-dc
+    </div>
+    <div class="carta">
+      <cartas-dc
       name="Hall Jordan"
       alias="Linterna Verde"
       estudio="DC"
@@ -46,7 +55,9 @@
       descripcion="Batman, también conocido como el Caballero de la Noche o el Hombre Murciélago"
       imagen="/assets/img\/greenlintern.jpg">
     </cartas-dc>
-    <cartas-dc
+    </div>
+    <div class="carta">
+      <cartas-dc
       name="Barry Allen"
       alias="Flash"
       estudio="DC"
@@ -54,7 +65,9 @@
       descripcion="Batman, también conocido como el Caballero de la Noche o el Hombre Murciélago"
       imagen="/assets/img\/Flash.jpg">
     </cartas-dc>
-    <cartas-dc
+    </div>
+    <div class="carta">
+      <cartas-dc
       name="Clark kent"
       alias="Superman"
       estudio="DC"
@@ -62,6 +75,7 @@
       descripcion="Batman, también conocido como el Caballero de la Noche o el Hombre Murciélago"
       imagen="/assets/img/superman.jpg">
     </cartas-dc>
+    </div>
   </div>
 </body>
 </html>

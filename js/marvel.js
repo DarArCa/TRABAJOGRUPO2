@@ -1,14 +1,17 @@
-class Cartasdc extends HTMLElement {
+class CartasMarvel extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: 'open' });
 
     const name = this.getAttribute('name');
     const alias = this.getAttribute('alias');
-    const estudio = this.getAttribute('estudio');
-    const presentacion = this.getAttribute('presentacion');
     const descripcion = this.getAttribute('descripcion');
     const imagen = this.getAttribute('imagen');
+    const ataque = this.getAttribute('ataque');
+    const fuerza = this.getAttribute('fuerza');
+    const resistencia = this.getAttribute('resistencia');
+    const estudio = this.getAttribute('estudio');
+    const presentacion = this.getAttribute('presentacion');
 
     this.shadowRoot.innerHTML = /* HTML */ `
       <style>
@@ -97,6 +100,9 @@ class Cartasdc extends HTMLElement {
             <p><strong>Alias:</strong> ${alias}</p>
             <p><strong>Estudio:</strong> ${estudio}</p>
             <p><strong>Primera aparición:</strong> ${presentacion}</p>
+            <p><strong>Ataque:</strong> ${ataque}</p>
+            <p><strong>Fuerza:</strong> ${fuerza}</p>
+            <p><strong>Resistencia:</strong> ${resistencia}</p>
             <p>${descripcion}</p>
           </div>
         </div>
@@ -112,4 +118,4 @@ class Cartasdc extends HTMLElement {
   }
 }
 
-customElements.define('cartas-dc', Cartasdc);
+customElements.define('cartas-marvel', CartasMarvel);

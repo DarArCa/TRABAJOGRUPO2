@@ -10,7 +10,7 @@
         "ataque": 90,
         "fuerza": 85,
         "debilidad": "Dependencia tecnológica",
-        "damage": 88,
+        "resistencia": 88,
         "imagen": "assets/img/iron_man.jpg",
         "gifAtaque": "./assets/video/ironman-attack.gif"
         },
@@ -24,7 +24,7 @@
         "ataque": 80,
         "fuerza": 78,
         "debilidad": "Inexperiencia",
-        "damage": 75,
+        "resistencia": 75,
         "imagen": "./assets/img/spiderman.jpg",
         "gifAtaque": "./assets/video/spiderman-attack.gif"
         },
@@ -38,7 +38,7 @@
         "ataque": 85,
         "fuerza": 80,
         "debilidad": "Trastorno de identidad",
-        "damage": 82,
+        "resistencia": 82,
         "imagen": "./assets/img/moon_knight.jpg",
         "gifAtaque": "./assets/video/moonknight-attack.gif"
         },
@@ -52,7 +52,7 @@
         "ataque": 78,
         "fuerza": 75,
         "debilidad": "Humano sin poderes",
-        "damage": 70,
+        "resistencia": 70,
         "imagen": "./assets/img/daredevil.jpg",
         "gifAtaque": "./assets/video/daredevil-attack.gif"
         },
@@ -66,7 +66,7 @@
         "ataque": 95,
         "fuerza": 90,
         "debilidad": "Sonido y fuego",
-        "damage": 92,
+        "resistencia": 92,
         "imagen": "./assets/img/venom.jpg",
         "gifAtaque": "./assets/video/venom-attack.gif"
         },
@@ -80,7 +80,7 @@
         "ataque": 85,
         "fuerza": 80,
         "debilidad": "Humano sin poderes",
-        "damage": 78,
+        "resistencia": 78,
         "imagen": "./assets/img/batman.jpg",
         "gifAtaque": "./assets/video/batman-attack.gif"
         },
@@ -94,7 +94,7 @@
         "ataque": 70,
         "fuerza": 60,
         "debilidad": "Locura impredecible",
-        "damage": 65,
+        "resistencia": 65,
         "imagen": "./assets/img/guason.jpg",
         "gifAtaque": "./assets/video/joker-attack.gif"
         },
@@ -108,7 +108,7 @@
         "ataque": 88,
         "fuerza": 85,
         "debilidad": "Miedo",
-        "damage": 83,
+        "resistencia": 83,
         "imagen": "assets/img/greenlintern.jpg",
         "gifAtaque": "assets/video/linternaverde-attack.gif"
         },
@@ -122,7 +122,7 @@
         "ataque": 87,
         "fuerza": 80,
         "debilidad": "Impulsividad",
-        "damage": 79,
+        "resistencia": 79,
         "imagen": "assets/img/flash.jpg",
         "gifAtaque": "assets/video/flash-attack.gif"
         },
@@ -136,7 +136,7 @@
         "ataque": 100,
         "fuerza": 100,
         "debilidad": "Kryptonita",
-        "damage": 95,
+        "resistencia": 95,
         "imagen": "assets/img/superman.jpg",
         "gifAtaque": "assets/video/superman-attack.gif"
         }

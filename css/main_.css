@@ -56,8 +56,9 @@
   font-size: 3rem;
   color: #fff;
   line-height: 1.6;
-  max-width: 40rem;
+  width: 300px;
   margin: 0 auto;
+  margin-right: 150px;
   
 }
 
