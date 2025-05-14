@@ -27,7 +27,13 @@ class CartasMarvel extends HTMLElement {
           border-radius: 10px;
           cursor: default;
           transition: transform 1s;
+          transition: transform 0.4s ease, box-shadow 0.4s ease;
           cursor: pointer;
+          background-color: #000;
+        }
+        .card:hover {
+          transform: translateY(-10px) scale(1.03) rotateZ(1deg);
+          box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
         }
 
         .card.flipped {
@@ -105,7 +111,10 @@ class CartasMarvel extends HTMLElement {
           font-size: 0.8rem;
           color: #666;
         }
+          
+
       </style>
+      
       <div class="card">
 
         <div class="card-front">
@@ -200,5 +209,15 @@ class CartasMarvel extends HTMLElement {
       })
   }
 }
+//lo mismo aqui
+// Ejemplo: en carta-marvel.js
+const personajesMarvel = [
+  { nombre: "Spiderman", imagen: "/assets/img/spiderman.jpg" },
+  { nombre: "Ironman", imagen: "/assets/img/ironman.jpg" },
+  { nombre: "Thor", imagen: "/assets/img/thor.jpg" },
+  { nombre: "Hulk", imagen: "/assets/img/hulk.jpg" },
+  { nombre: "Black Widow", imagen: "/assets/img/blackwidow.jpg" }
+];
+
 
 customElements.define('cartas-marvel', CartasMarvel);

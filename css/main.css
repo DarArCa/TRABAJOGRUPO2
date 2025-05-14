@@ -19,42 +19,15 @@ body {
   flex-wrap: wrap;
   gap: 20px; /* Espacio entre las cartas */
   justify-content: center; /* Centra las cartas en la fila */
+  
 }
 
-.carta {
-  width: 300px; /* Ancho fijo para cada carta */
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  background-color: #fff;
-  transition: transform 0.3s ease;
-}
 
-.carta:hover {
-  transform: translateY(-5px); /* Efecto de elevación al pasar el mouse */
-}
 
-.carta img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
 
-.carta .contenido {
-  padding: 15px;
-}
 
-.carta .contenido h3 {
-  margin: 0;
-  font-size: 1.2rem;
-  color: #333;
-}
 
-.carta .contenido p {
-  font-size: 0.9rem;
-  color: #666;
-}
+
 
 
 @keyframes background_animation {
@@ -183,6 +156,20 @@ main {
   
 }
 
+.homecont{
+  display: flex;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 70rem;
+    margin-left: 10%;
+    margin-right: 10%;
+    color: white;
+    padding: 10rem;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
 .imagen-container img {
   width: 20rem;
   height: auto;
@@ -194,7 +181,7 @@ main {
   font-size: 1.5rem;
   color: #fff;
   line-height: 1.6;
-  max-width: 40rem;
+  max-width: 60rem;
   margin: 0 auto;
 }
 
@@ -218,8 +205,6 @@ h1{
     text-shadow: 0 0 25px rgba(91, 192, 190, 0.7);
   }
 }
-
-
 
 
 /* TODO: este responsive tengo que revisarlo porque no esta en rem o dvh */

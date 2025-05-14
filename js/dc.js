@@ -27,7 +27,13 @@ class Cartasdc extends HTMLElement {
           border-radius: 10px;
           cursor: default;
           transition: transform 1s;
+          transition: transform 0.4s ease, box-shadow 0.4s ease;
           cursor: pointer;
+          
+        }
+          .card:hover {
+          transform: translateY(-10px) scale(1.03) rotateZ(1deg);
+          box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
         }
 
         .card.flipped {
@@ -199,5 +205,20 @@ class Cartasdc extends HTMLElement {
       })
   }
 }
+
+//sebastian puedes editar esto con las imagenes y nombres de cada uno
+// Ejemplo: en carta-dc.js
+const personajesDC = [
+  { nombre: "Batman", imagen: "/assets/img/batman.jpg" },
+  { nombre: "Superman", imagen: "/assets/img/superman.jpg" },
+  { nombre: "Flash", imagen: "/assets/img/flash.jpg" },
+  { nombre: "Joker", imagen: "/assets/img/guason.jpg" },
+  { nombre: "Green Lantern", imagen: "/assets/img/greenlintern.jpg" },
+  { nombre: "Moon Knight", imagen: "/assets/img/moon_knight.jpg" },
+  { nombre: "Venom", imagen: "/assets/img/venom.jpg" },
+  { nombre: "Spiderman", imagen: "/assets/img/spiderman.jpg" },
+  { nombre: "Iron Man", imagen: "/assets/img/iron_man.jpg" },
+  { nombre: "Daredevil", imagen: "/assets/img/daredevil.jpg" }
+];
 
 customElements.define('cartas-dc', Cartasdc);
