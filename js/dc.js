@@ -1,4 +1,4 @@
-class CartasMarvel extends HTMLElement {
+class Cartasdc extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: 'open' });
@@ -77,8 +77,7 @@ class CartasMarvel extends HTMLElement {
         }
 
         #universo {
-          font-size: 1rem;
-          font-weight: bolder;
+          font-size: 0.9rem;
           color: #444;
           margin-top: 5px;
         }
@@ -201,4 +200,4 @@ class CartasMarvel extends HTMLElement {
   }
 }
 
-customElements.define('cartas-marvel', CartasMarvel);
+customElements.define('cartas-dc', Cartasdc);
