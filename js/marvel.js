@@ -2,7 +2,9 @@ class CartasMarvel extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: 'open' });
+  }
 
+  connectedCallback() {
     const name = this.getAttribute('name');
     const alias = this.getAttribute('alias');
     const descripcion = this.getAttribute('descripcion');
@@ -13,7 +15,7 @@ class CartasMarvel extends HTMLElement {
     const estudio = this.getAttribute('estudio');
     const presentacion = this.getAttribute('presentacion');
 
-    this.shadowRoot.innerHTML = /* HTML */ `
+    this.shadowRoot.innerHTML = /* html */ `
       <style>
         .card-container {
           width: 300px;
@@ -27,7 +29,7 @@ class CartasMarvel extends HTMLElement {
           height: 100%;
           position: relative;
           transform-style: preserve-3d;
-          transition: transform 2s;
+          transition: transform 1s;
           cursor: pointer;
         }
 
@@ -108,14 +110,12 @@ class CartasMarvel extends HTMLElement {
         </div>
       </div>
     `;
-  }
 
-  connectedCallback() {
-    const carta = this.shadowRoot.querySelector('.card');
-    carta.addEventListener('click', () => {
-      carta.classList.toggle('girada');
+    this.shadowRoot.querySelector('.card').addEventListener('click', () => {
+      this.shadowRoot.querySelector('.card').classList.toggle('girada');
     });
   }
 }
 
 customElements.define('cartas-marvel', CartasMarvel);
+

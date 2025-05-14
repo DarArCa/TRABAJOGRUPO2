@@ -11,7 +11,7 @@
         "fuerza": 85,
         "debilidad": "Dependencia tecnológica",
         "resistencia": 88,
-        "imagen": "assets/img/iron_man.jpg",
+        "imagen": "../assets/img/iron_man.jpg",
         "gifAtaque": "./assets/video/ironman-attack.gif"
         },
         {
