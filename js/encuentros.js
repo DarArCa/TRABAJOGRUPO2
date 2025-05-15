@@ -23,6 +23,9 @@ document.addEventListener("DOMContentLoaded", () => {
       modalBatalla.style.display = "none";
       logBatalla.innerHTML = "";
     }
+    if (e.target === modalBatallaVisual) {
+      modalBatallaVisual.style.display = "none";
+    }
   });
 });
 
@@ -61,7 +64,6 @@ function seleccionarPersonaje(jugadorId, personaje, divSeleccionado) {
   verificarSeleccion();
 }
 
-// ✅ Función de selección aleatoria
 function seleccionarAleatorio(jugadorNum) {
   const todosLosPersonajes = [...personajesDC, ...personajesMarvel];
   const personajeAleatorio = todosLosPersonajes[Math.floor(Math.random() * todosLosPersonajes.length)];
@@ -69,7 +71,6 @@ function seleccionarAleatorio(jugadorNum) {
   seleccion[jugadorId] = personajeAleatorio;
   console.log(`Selección aleatoria para ${jugadorId}:`, personajeAleatorio);
 
-  // Resaltar tarjeta seleccionada
   const tarjetas = document.querySelectorAll(`#tarjetas-${jugadorId} .tarjeta`);
   tarjetas.forEach(t => {
     const nombre = t.querySelector("p").textContent;
@@ -83,7 +84,7 @@ function seleccionarAleatorio(jugadorNum) {
   verificarSeleccion();
 }
 
-// MODAL DE BATALLA
+// MODAL DE BATALLA POR TEXTO
 const modalBatalla = document.getElementById("modal-batalla");
 const cerrarBatalla = document.getElementById("cerrar-batalla");
 const btnIniciarTurno = document.getElementById("iniciar-turno");
@@ -97,6 +98,7 @@ cerrarBatalla.addEventListener("click", () => {
 function verificarSeleccion() {
   if (seleccion.jugador1 && seleccion.jugador2) {
     mostrarModalBatalla();
+    mostrarModalBatallaVisual();
   }
 }
 
@@ -112,29 +114,63 @@ function mostrarModalBatalla() {
   modalBatalla.style.display = "block";
 }
 
-function batallaPorTurnos() {
-  const p1 = { ...seleccion.jugador1, vida: 100 };
-  const p2 = { ...seleccion.jugador2, vida: 100 };
-  let turno = 0;
-  logBatalla.innerHTML = "";
+// 🎯 NUEVO MODAL VISUAL
+const modalBatallaVisual = document.getElementById("modal-batalla-visual");
+const contenedorVisual = document.getElementById("batalla-visual");
+const cerrarVisual = document.getElementById("cerrar-batalla-visual");
 
-  const intervalo = setInterval(() => {
-    if (p1.vida <= 0 || p2.vida <= 0) {
-      const ganador = p1.vida <= 0 ? p2.nombre : p1.nombre;
-      logBatalla.innerHTML += `<p><strong>¡${ganador} gana!</strong></p>`;
-      clearInterval(intervalo);
-      return;
+cerrarVisual.addEventListener("click", () => {
+  modalBatallaVisual.style.display = "none";
+});
+
+function mostrarModalBatallaVisual() {
+  const p1 = { ...seleccion.jugador1, vida: seleccion.jugador1.resistencia };
+  const p2 = { ...seleccion.jugador2, vida: seleccion.jugador2.resistencia };
+
+  contenedorVisual.innerHTML = `
+    <div style="display: flex; justify-content: space-between; align-items: center; padding: 30px;">
+      <!-- Jugador 1 -->
+      <div style="text-align: center;">
+        <h3>${p1.nombre}</h3>
+        <img src="${p1.imagen}" width="150">
+        <div style="margin: 10px 0;">
+          <div style="width: 150px; height: 20px; background: #ddd;">
+            <div id="vida-p1" style="width: 100%; height: 100%; background: green;"></div>
+          </div>
+          <p id="vida-p1-text">${p1.vida} HP</p>
+        </div>
+        <button id="btn-atacar" style="padding: 10px 20px;">Atacar</button>
+      </div>
+
+      <!-- Jugador 2 -->
+      <div style="text-align: center;">
+        <h3>${p2.nombre}</h3>
+        <img src="${p2.imagen}" width="150">
+        <div style="margin: 10px 0;">
+          <div style="width: 150px; height: 20px; background: #ddd;">
+            <div id="vida-p2" style="width: 100%; height: 100%; background: red;"></div>
+          </div>
+          <p id="vida-p2-text">${p2.vida} HP</p>
+        </div>
+      </div>
+    </div>
+  `;
+
+  modalBatallaVisual.style.display = "block";
+
+  document.getElementById("btn-atacar").addEventListener("click", () => {
+    const ataques = [p1.ataque1, p1.ataque2, p1.ataque3];
+    const daño = ataques[Math.floor(Math.random() * ataques.length)];
+
+    p2.vida -= daño;
+    if (p2.vida < 0) p2.vida = 0;
+
+    document.getElementById("vida-p2").style.width = `${(p2.vida / seleccion.jugador2.resistencia) * 100}%`;
+    document.getElementById("vida-p2-text").textContent = `${p2.vida} HP`;
+
+    if (p2.vida <= 0) {
+      alert(`${p1.nombre} ha ganado la batalla visual!`);
+      document.getElementById("btn-atacar").disabled = true;
     }
-
-    const atacante = turno % 2 === 0 ? p1 : p2;
-    const defensor = turno % 2 === 0 ? p2 : p1;
-    const daño = Math.floor(Math.random() * 20) + 5;
-
-    defensor.vida -= daño;
-    logBatalla.innerHTML += `<p>${atacante.nombre} ataca a ${defensor.nombre} y causa ${daño} de daño. Vida de ${defensor.nombre}: ${defensor.vida}</p>`;
-    logBatalla.scrollTop = logBatalla.scrollHeight;
-    turno++;
-  }, 1000);
+  });
 }
-
-btnIniciarTurno.addEventListener("click", batallaPorTurnos);
