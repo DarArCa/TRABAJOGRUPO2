@@ -1,0 +1,110 @@
+/* estilos de la pantalla de combate */
+.life-bar {
+    /* esto es la barra de vida */
+    width: 15rem;
+    height: 1.5rem;
+    background-color: #eee;
+    border: 2px solid #000;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.life-fill {
+    /* todo esto es el relleno de la barra de vida */
+    height: 100%;
+    background-color: #f00;
+    width: 100%; /* empieza la barra de vida al 100% */
+    /* se demora 0.5 segundos en la transicion del ataque y eso */
+    transition: width 0.5s;
+}
+
+.gif-container img {
+    height: 150px;
+}
+
+body {
+    font-family: sans-serif;
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+.arena {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 30px;
+}
+.player {
+    width: 250px;
+}
+.life-bar {
+    flex-wrap: nowrap;
+    width: 100%;
+    height: 20px;
+    background: #555;
+    border: 1px solid white;
+    margin-bottom: 10px;
+}
+.life-fill {
+    height: 100%;
+    background: red;
+    width: 100%;
+    transition: width 0.5s ease;
+}
+.gif-container img {
+    width: 200px;
+    height: auto;
+}
+#attackBtn{
+    margin-top: 2rem;
+    background: #8a00e6;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.1rem;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#attackBtn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 12px #ff0044
+}
+
+
+/* estilos de parte de la pantalla de victoria */
+.overlay-ganador {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+}
+.overlay-ganador img{
+    max-width: 15rem;
+    margin: 1rem;
+}
+.overlay-ganador button{
+    background: #1a1aff;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.1rem;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.overlay-ganador button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 12px #ff0044;
+}
+
