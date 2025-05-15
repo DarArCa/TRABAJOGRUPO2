@@ -1,17 +1,28 @@
+/*valores predeterminados*/
+*{
+  padding: 0;
+  margin: 0;
+}
+
+
 /* Estos son los estilo generales que se les aplica al body */
 body {
   margin: 0;
-  background-image: url(https://giffiles.alphacoders.com/223/223284.gif);
+  background-image: url(https://i.pinimg.com/736x/a7/2a/02/a72a022f37c47d8d294e85577737f362.jpg);
   background-size: cover; /* La imagen cubre todo el contenedor */
   background-position: center; /* Centra la imagen */
   background-repeat: no-repeat; /* Evita que la imagen se repita */
   font-family: Arial, sans-serif;
-  background-color: #0B132B;
-  background-size: cover;
-  background-position: center;
   height: auto;
   /* esta animacion es opcional, lo que hace es que con el keyframe genera un fecto como de respiracion de colores con el fondo */
   animation: background_animation 2s infinite alternate;
+}
+
+.heroes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Espacio entre las cartas */
+  justify-content: center; /* Centra las cartas en la fila */ 
 }
 
 @keyframes background_animation {
@@ -27,7 +38,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #1C2541;
+  background-color: #111113;
   padding: 0 3rem;
   height: 10rem; /* AUMENTADO */
   box-sizing: border-box;
@@ -57,7 +68,6 @@ header {
   border-radius: 8px; /* Bordes redondeados */
 }
 
-
 #logo {
   width: 5.5rem;
   border-radius: 50%;
@@ -65,6 +75,7 @@ header {
   transition: all 1s ease;
   /* sombreado de la imagen del logo */
   box-shadow: 0 0 15px rgba(91, 192, 190, 0.3);
+  height: auto;
 }
 
 /* para que al momento de pasar el cursor por la imagen se haga un efecto de aumento */
@@ -95,14 +106,14 @@ nav {
 }
 
 .nav-button:hover{
-  background-color: #3A506B;
+  background-color: #7d0f0f;
   transform: translateY(-5px);
   transition: all 0.5s ease;
   box-shadow: 0px 10px 20px rgb(191, 196, 201, );
 }
 
 .nav-button.active {
-  background-color: #5BC0BE;
+  background-color: #650d0de2;
   transition: all 0.5s ease;
   color: #000;
   box-shadow: 0px 4px 20px rgb(14, 19, 34) ;
@@ -120,7 +131,7 @@ nav {
 }
 
 .nav-button.active:hover{
-  background-color: #3A506B;
+  background-color: #650000c7;
   transform: translateY(-10px);
   transition: all 0.3s ease;
   box-shadow: 30px 30px 30px rgb(191, 196, 201, );
@@ -134,14 +145,30 @@ main {
 .imagen-container {
   display: flex;
   justify-content: center;
+  flex-direction: column;
   margin-bottom: 0px;
   overflow: hidden;
-  height: 24rem;
+  
+}
+
+.homecont{
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 70rem;
+  height: 100%;
+  margin-left: 10%;
+  margin-right: 10%;
+  color: white;
+  padding: 10rem;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .imagen-container img {
   width: 20rem;
-  height: auto;
+  height: 100%;
   object-fit: cover;
   transition: all 1s ease;
 }
@@ -150,7 +177,7 @@ main {
   font-size: 1.5rem;
   color: #fff;
   line-height: 1.6;
-  max-width: 40rem;
+  max-width: 100%;
   margin: 0 auto;
 }
 
@@ -163,7 +190,7 @@ h1{
   display: inline-block;
   text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   /* practicamente copie y pegue la misma animacion del fondo de la pagina principal */
-  animation: bright 3s infinite alternate;
+  animation: 3s infinite alternate;
 }
 
 @keyframes bright {
@@ -175,11 +202,109 @@ h1{
   }
 }
 
+.app{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
+footer{
+  font-style: italic;
+  display: flex;
+  justify-content: center;
+  background-color: #111113;
+  padding: 3rem;
+  gap: 1rem;
+  color: white;
+}
+
+.botonarena{
+  text-decoration: none;
+  margin-top: 2%;
+  width: 160px;
+  height: 70px;
+}
+
+
+.botonarena h1 {
+  font-size: 17px;
+}
+button{
+  text-decoration: none;
+  display: flex;
+  background-color: rgba(61, 22, 99, 0.925);
+  height: auto;
+  width: auto;
+  border-bottom: #0b132b;
+  padding: 10px;
+  border-style: double;
+  border-radius: 20px 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+/*animacion de hover para el boton de home*/
+.botonarena:hover{
+  text-decoration: none;
+  transform: translateY(-5px);
+  transition: all 0.3s ease;
+  box-shadow: 30px 30px 30px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  background: linear-gradient(to bottom, #fad2fd, rgba(61, 22, 99, 0.925));
+}
+/*jueguen con los colores del texto del index*/
+@keyframes fuego {
+  0% {
+    text-shadow: 0 0 5px rgb(135, 102, 255), 0 0 10px rgb(61, 22, 170), 0 0 15px rgb(37, 0, 48);
+    color: #fff;
+  }
+  50% {
+    text-shadow: 0 0 10px rgb(135, 102, 255), 0 0 20px rgb(61, 22, 170), 0 0 30px rgb(37,0,48);
+    color: rgb(45, 8, 59);
+  }
+  100% {
+    text-shadow: 0 0 5px rgb(135, 102, 255), 0 0 10px rgb(61, 22, 170), 0 0 15px rgb(37,0,48);
+    color: #fff;
+  }
+}
+
+.texto-fuego {
+  font-size: 5rem;
+  font-weight: bold;
+  text-align: center;
+  color: #fff;
+  animation: fuego 1s infinite;
+  font-family: 'Impact', sans-serif;
+  margin-top: 30px;
+}
+.texto-index-fuego {
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+  color: #fff;
+  animation: fuego 3s infinite;
+  font-family: "Bangers", cursive;
+  margin-top: 30px;
+}
+.contenedor-arena{
+  width: 100%;
+  height: auto;
+  background-color: #00000066;
+  display: flex;              /* Activa Flexbox */
+  flex-direction: row;        /* Alinea en fila (horizontal) */
+  justify-content: center;    /* Centra horizontalmente los ítems (opcional) */
+  align-items: center;        /* Centra verticalmente los ítems (opcional) */
+  gap: 4px;
+  flex-wrap: wrap;            /* Permite que los elementos se envuelvan hacia abajo */    
+}
+
+.boton-header{
+  background-color: rgba(134, 6, 6, 0.829);
+}
 
 
 /* TODO: este responsive tengo que revisarlo porque no esta en rem o dvh */
-/* celulares */
 @media (max-width: 768px) {
   body {
     margin: 0;
@@ -225,6 +350,23 @@ h1{
     padding: 1.5rem 1rem;
     text-align: center;
   }
+
+.homecont {
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 20rem;
+  color: white;
+  padding: 2rem; 
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: none;        
+  box-shadow: none;    
+  outline: none;       
+}
+
+
   .imagen-container {
     display: flex;
     justify-content: center;
@@ -250,13 +392,39 @@ h1{
     display: inline-block;
   }
 }
-
-/* tablets */
-@media (max-width: 1024px) {
-  header {
-    flex-direction: column;
+@media (min-width: 768px) and (max-width: 1550px) {
+  #logo {
+    width: 4.5rem;
+    height: auto;
   }
+  .nav-button {
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+  }
+
+  .homecont {
+    width: 100%;
+    max-width: 60rem;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    font-size: 1rem;
+  }
+  .texto-contenido {
+    max-width: 90%;
+  }
+  /* .contenedor-arena {
+    flex-direction: row;
+    gap: 1rem;
+  }
+  .botonarena {
+    width: 150px;
+    height: 60px;
+  }
+  .botonarena h1 {
+    font-size: 1rem;
+  } */
 }
+
 
 /* explicacion de las animaciones personalizadas. Estructura basica: 
 @keyframes nombreDeLaAnimacion {
@@ -268,26 +436,3 @@ h1{
 .elemento {
   animation: nombreDeLaAnimacion 2s ease-in-out infinite;
 } */
-
-footer{
-  font-style: italic;
-  
-}
-.botonarena{
-  margin-left: 45%;
-  margin-top: 0%;
-  width: 160px;
-  height: 70px;
-}
-.botonarena h1 {
-  font-size: 17px;
-}
-button{
-  background-color: rgba(61, 22, 99, 0.925);
-  height: auto;
-  width: auto;
-  border-bottom: #0b132b;
-  padding: 10px;
-  border-style: double;
-  border-radius: 20px 20px;
-}
