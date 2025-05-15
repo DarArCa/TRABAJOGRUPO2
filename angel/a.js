@@ -1,5 +1,7 @@
 // modelo de personaje
+
 class Personaje {
+    // esto es el equivalente a declarar las variables de que se van a usar trayendo las que estan en el JSON con el fin de darle cararcteristicas al personaje 
     constructor(nombre, ataque, defensa, vida, resistencia, gifAtaque) {
         this.nombre = nombre;
         this.ataque = ataque;
@@ -17,13 +19,13 @@ class Personaje {
         return dañoReal;
     }
 
-    estaVivo() {
+    isAlive() {
         return this.vida > 0;
     }
 }
 
 // parte 2, iniciar combate
-const p1 = new Personaje("Batman", 30, 10, 100, "batman-punch.gif");
+const p1 = new Personaje("Batman", 30, 10, 100, "./assets/video/batman_attack.gif");
 const p2 = new Personaje("Thanos", 25, 5, 100, "thanos-blast.gif");
 let modoJuego = "PvP"; // PvP, PvE, AI
 
@@ -44,7 +46,7 @@ function atacar(atacante, defensor, gifContainerId, vidaBarId) {
     document.getElementById(vidaBarId).style.width = `${vidaPorcentaje}%`;
 
     // Verificar si terminó el juego
-    if (!defensor.estaVivo()) {
+    if (!defensor.isAlive()) {
         setTimeout(() => mostrarGanador(atacante.nombre), 1000);
     }
     }
@@ -62,7 +64,7 @@ document.getElementById("attackBtn").addEventListener("click", () => {
     } else if (modoJuego === "PvE") {
         atacar(p1, p2, "gif1", "life2");
         setTimeout(() => {
-        if (p2.estaVivo()) atacar(p2, p1, "gif2", "life1");
+        if (p2.isAlive()) atacar(p2, p1, "gif2", "life1");
         }, 1000);
     } else if (modoJuego === "AI") {
         if (turnoJugador === 1) {
@@ -73,7 +75,7 @@ document.getElementById("attackBtn").addEventListener("click", () => {
         turnoJugador = 1;
         }
 
-        if (p1.estaVivo() && p2.estaVivo()) {
+        if (p1.isAlive() && p2.isAlive()) {
         setTimeout(() => document.getElementById("attackBtn").click(), 1500);
         }
     }

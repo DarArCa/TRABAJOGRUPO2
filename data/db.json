@@ -11,7 +11,7 @@
         "ataque2": 20,
         "ataque3": 30,
         "debilidad": "Dependencia tecnológica",
-        "resistencia": 100,
+        "resistencia": 700,
         "imagen": "../assets/img/iron_man.jpg",
         "gifAtaque": "./assets/video/ironman-attack.gif"
         },
@@ -26,7 +26,7 @@
         "ataque2": 28,
         "ataque3":30,
         "debilidad": "Inexperiencia",
-        "resistencia": 100,
+        "resistencia": 50,
         "imagen": "./assets/img/spiderman.jpg",
         "gifAtaque": "./assets/video/spiderman-attack.gif"
         },
@@ -41,7 +41,7 @@
         "ataque2": 30,
         "ataque3":19,
         "debilidad": "Trastorno de identidad",
-        "resistencia": 100,
+        "resistencia": 60,
         "imagen": "./assets/img/moon_knight.jpg",
         "gifAtaque": "./assets/video/moonknight-attack.gif"
         },
@@ -56,7 +56,7 @@
         "ataque2": 17,
         "ataque3":20,
         "debilidad": "Humano sin poderes",
-        "resistencia": 100,
+        "resistencia": 40,
         "imagen": "./assets/img/daredevil.jpg",
         "gifAtaque": "./assets/video/daredevil-attack.gif"
         },
@@ -71,7 +71,7 @@
         "ataque2": 34,
         "ataque3":20,
         "debilidad": "Sonido y fuego",
-        "resistencia": 100,
+        "resistencia": 80,
         "imagen": "./assets/img/venom.jpg",
         "gifAtaque": "./assets/video/venom-attack.gif"
         },
@@ -86,7 +86,7 @@
         "ataque2": 38,
         "ataque3":30,
         "debilidad": "Humano sin poderes",
-        "resistencia": 100,
+        "resistencia": 80,
         "imagen": "./assets/img/batman.jpg",
         "gifAtaque": "./assets/video/batman-attack.gif"
         },
@@ -101,7 +101,7 @@
         "ataque2": 26,
         "ataque3":30,
         "debilidad": "Locura impredecible",
-        "resistencia": 100,
+        "resistencia": 30,
         "imagen": "./assets/img/guason.jpg",
         "gifAtaque": "./assets/video/joker-attack.gif"
         },
@@ -116,7 +116,7 @@
         "ataque2": 30,
         "ataque3":20,
         "debilidad": "Miedo",
-        "resistencia": 100,
+        "resistencia": 35,
         "imagen": "assets/img/greenlintern.jpg",
         "gifAtaque": "assets/video/linternaverde-attack.gif"
         },
@@ -131,7 +131,7 @@
         "ataque2": 38,
         "ataque3":29,
         "debilidad": "Impulsividad",
-        "resistencia":100,
+        "resistencia":40,
         "imagen": "assets/img/flash.jpg",
         "gifAtaque": "assets/video/flash-attack.gif"
         },

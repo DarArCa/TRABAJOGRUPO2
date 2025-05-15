@@ -228,11 +228,12 @@ class SearchBox extends HTMLElement {
     this.attachShadow({ mode: 'open' });
 
     // Estilo del componente
-    this.shadowRoot.innerHTML = `
+    this.shadowRoot.innerHTML = /* HTML */`
       <style>
         .search-box {
         margin-left: 10%;
         margin-right: 10%;
+        margin-bottom: 4rem;
         padding: 10px;
         }
 
@@ -269,7 +270,7 @@ customElements.define('search-box', SearchBox);
 
 document.querySelector("search-box").addEventListener("input", (e) => {
   const searchText = e.detail.toLowerCase();
-  document.querySelectorAll(".cartas-dc").forEach(hero => {
+  document.querySelectorAll(".cartas-marvel").forEach(hero => {
     const name = hero.querySelector("nombre").textContent.toLowerCase();
     hero.style.display = name.includes(searchText) ? "block" : "none";
   });

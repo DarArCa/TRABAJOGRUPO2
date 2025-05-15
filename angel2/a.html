@@ -1,0 +1,108 @@
+<!-- arena.html - Página de la arena de combate -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arena de Superhéroes</title>
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/arena.css">
+  <link rel="icon" href="/assets/img/logo.png" type="image/png">
+</head>
+<body>
+  <header>
+    <img id="logo" src="/assets/img/logo.png" alt="Logo" />
+    <nav>
+      <a href="../index.html"><button id="btn-home" class="nav-button">Home</button></a>
+      <a href="/html/dc.html"><button id="btn-dc" class="nav-button">DC</button></a>
+      <a href="/html/marvel.html"><button id="btn-marvel" class="nav-button">Marvel</button></a>
+      <button id="btn-arena" class="nav-button active">Arena</button>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h1>Arena de Combate</h1>
+    
+    <!-- Sección de selección de personajes -->
+    <div id="seleccion-personajes">
+      <div class="modo-juego-container">
+        <h2>Modo de Juego</h2>
+        <select id="modo-juego">
+          <option value="pvp">Jugador vs Jugador</option>
+          <option value="pvc">Jugador vs Máquina</option>
+          <option value="cvc">Máquina vs Máquina</option>
+        </select>
+      </div>
+      
+      <div class="seleccion-container">
+        <div class="seleccion-jugador">
+          <h3>Jugador 1</h3>
+          <select id="seleccion-j1">
+            <option value="">Selecciona un personaje</option>
+            <!-- Opciones se cargarán dinámicamente -->
+          </select>
+          <div id="info-j1"></div>
+        </div>
+        
+        <div class="seleccion-jugador">
+          <h3>Jugador 2</h3>
+          <select id="seleccion-j2">
+            <option value="">Selecciona un personaje</option>
+            <!-- Opciones se cargarán dinámicamente -->
+          </select>
+          <div id="info-j2"></div>
+        </div>
+      </div>
+      
+      <button id="btn-iniciar" class="btn-principal" disabled>¡Iniciar Combate!</button>
+    </div>
+    
+    <!-- Arena de combate -->
+    <div id="arena-combate">
+      <div class="arena-header">
+        <div class="jugador-info">
+          <img id="j1-imagen" src="/placeholder.svg" alt="Jugador 1">
+          <div id="j1-nombre" class="jugador-nombre"></div>
+          <div class="barra-vida-container">
+            <div id="j1-barra-vida" class="barra-vida"></div>
+          </div>
+          <div id="j1-vida-texto" class="vida-texto"></div>
+          <div id="j1-turno" class="indicador-turno"></div>
+        </div>
+        
+        <div class="vs-container">VS</div>
+        
+        <div class="jugador-info">
+          <img id="j2-imagen" src="/placeholder.svg" alt="Jugador 2">
+          <div id="j2-nombre" class="jugador-nombre"></div>
+          <div class="barra-vida-container">
+            <div id="j2-barra-vida" class="barra-vida"></div>
+          </div>
+          <div id="j2-vida-texto" class="vida-texto"></div>
+          <div id="j2-turno" class="indicador-turno"></div>
+        </div>
+      </div>
+      
+      <div class="arena-main">
+        <!-- Aquí se mostrará el GIF de ataque -->
+        <div id="gif-ataque"></div>
+      </div>
+      
+      <div class="arena-footer">
+        <div id="botones-ataque" class="botones-ataque-container">
+          <!-- Botones de ataque se cargarán dinámicamente -->
+        </div>
+      </div>
+    </div>
+    
+    <!-- Modal del ganador -->
+    <div id="modal-ganador">
+      <div id="contenido-modal">
+        <!-- Contenido del modal se cargará dinámicamente -->
+      </div>
+    </div>
+  </div>
+  
+  <script src="/js/arena.js"></script>
+</body>
+</html>

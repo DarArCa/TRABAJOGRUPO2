@@ -1,1 +1,0 @@
-// en este archivo debe de hacerse las funciones de la pelea como tal, definir los estilos de la vida, los gif de los ataques, hacer que no se pueda atacar 2 veces seguidas, mostrar la ventana emergente donde se muestre quien ganó
