@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HEROES DC</title>
   <script src="/js/dc.js" defer></script>
+  <script src="/js/buscador.js"></script>
   <link rel="stylesheet" href="/css/main.css">
   <link rel="stylesheet" href="/css/arena.css">
   
@@ -20,10 +21,6 @@
       <a href="/html/arena.html"><button id="btn-arena" class="nav-button">Arena</button></a>
     </nav>
   </header>
-  <video autoplay muted loop id="fondo-video">
-    <source src="/assets/video/marvel.mp4" type="video/mp4" />
-    Tu navegador no soporta el video de fondo.
-  </video>
   <search-box>
     <div class="row">
       <input type="text" 
@@ -33,7 +30,9 @@
       >
     </div>
   </search-box>
+
   <div id="carta-container"></div>
+
   <div class="heroes">
     <cartas-dc
       nombre="Batman"
@@ -43,6 +42,7 @@
       descripcion="Batman, también conocido como el Caballero de la Noche o el Hombre Murciélago"
       imagen="/assets/img\batman.jpg">
     </cartas-dc>
+
     <cartas-dc
       nombre="Joker"
       nombreClave="Jack Oswald white"
@@ -51,6 +51,7 @@
       descripcion="Batman, también conocido como el Caballero de la Noche o el Hombre Murciélago"
       imagen="/assets/img\guason.jpg">
     </cartas-dc>
+
     <cartas-dc
       nombre="Linterna Verde"
       nombreClave="Hall Jordan"
@@ -59,6 +60,7 @@
       descripcion="Batman, también conocido como el Caballero de la Noche o el Hombre Murciélago"
       imagen="/assets/img\greenlintern.jpg">
     </cartas-dc>
+
     <cartas-dc
       nombre="Flash"
       nombreClave="Barry Allen"
@@ -67,6 +69,7 @@
       descripcion="Batman, también conocido como el Caballero de la Noche o el Hombre Murciélago"
       imagen="/assets/img\Flash.jpg">
     </cartas-dc>
+
     <cartas-dc
       nombre="Superman"
       nombreClave="Clark Kent"
@@ -77,4 +80,9 @@
     </cartas-dc>
   </div>
 </body>
+  <footer>
+      ©Campuslands 2025,
+      ©MARVEL Comis 2025, todos los derechos reservados
+      ©DC comics 2025, todos los derechos reservados
+    </footer>
 </html>

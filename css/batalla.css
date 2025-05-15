@@ -1,0 +1,49 @@
+.modal-batalla {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-batalla.oculto {
+  display: none;
+}
+
+.batalla-contenedor {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  max-width: 1000px;
+  gap: 2rem;
+}
+
+.personaje-lucha {
+  flex: 1;
+  text-align: center;
+  color: white;
+}
+
+.personaje-lucha img {
+  width: 200px;
+  border: 2px solid white;
+  border-radius: 20px;
+}
+
+.vida {
+  background: #444;
+  height: 20px;
+  margin: 10px auto;
+  width: 80%;
+  border-radius: 10px;
+}
+
+.barra-vida {
+  height: 100%;
+  background: limegreen;
+  border-radius: 10px;
+  width: 100%;
+  transition: width 0.3s;
+}

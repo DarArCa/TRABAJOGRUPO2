@@ -2,18 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <!-- Importación de estilos -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="/css/main.css" />
   <link rel="stylesheet" href="/css/arena.css" />
   <link rel="icon" href="/assets/img/logo.png" type="image/png" />
   <title>ARENA DE BATALLA</title>
 
-  <!-- Importación de scripts -->
+  <!-- Scripts que cargas (dc.js, marvel.js, encuentros.js) -->
   <script src="/js/dc.js" defer></script>
   <script src="/js/marvel.js" defer></script>
   <script src="/js/encuentros.js" defer></script>
+  <script src="/js/arena.js" defer></script>
 </head>
 <body>
   <header>
@@ -26,75 +25,79 @@
     </nav>
   </header>
 
-  <div class="contenedor-arena">
-    <!-- Primer combate con botón de acción -->
-    <div class="pelea" id="combate-1">
-      <h2>Jugador 1</h2>
-      <div class="imagen">
-        <img src="/assets/img/sentry.jpg" alt="Jugador 1" />
-      </div>
-      <span class="vs"><div class="texto-fuego">VS</div></span>
-      <h2>Jugador 2</h2>
-      <div class="imagen">
-        <img src="/assets/img/sentry.jpg" alt="Jugador 2" />
+  <main>
+    <!-- Arena visual principal -->
+    <div class="contenedor-arena">
+      <div class="pelea" id="combate-1">
+        <h2>Jugador 1</h2>
+        <div class="imagen" id="img-jugador1"></div>
+
+        <span class="vs"><div class="texto-fuego">VS</div></span>
+
+        <h2>Jugador 2</h2>
+        <div class="imagen" id="img-jugador2"></div>
       </div>
     </div>
 
-    <!-- Combate 2 -->
-    <div class="pelea">
-      <div class="imagen">
-        <img src="../assets/img/sentry.jpg" alt="Jugador 3" />
-      </div>
-      <span class="vs"><div class="texto-fuego">VS</div></span>
-      <div class="imagen">
-        <img src="../assets/img/ultron.jpeg" alt="Jugador 4" />
+    <!-- Modal selección personajes -->
+    <div id="modal-combate" class="modal" style="display:none;">
+      <div class="modal-content">
+        <span class="close" id="cerrar-modal">&times;</span>
+        <h2>Selecciona tus personajes</h2>
+        <div class="seleccion-jugadores">
+          <div class="jugador" id="jugador1">
+            <h3>Jugador 1</h3>
+            <div class="tarjetas" id="tarjetas-jugador1"></div>
+            <button class="btn-aleatorio" onclick="seleccionarAleatorio(1)">Seleccionar aleatorio</button>
+          </div>
+
+          <div class="jugador" id="jugador2">
+            <h3>Jugador 2</h3>
+            <div class="tarjetas" id="tarjetas-jugador2"></div>
+            <button class="btn-aleatorio" onclick="seleccionarAleatorio(2)">Seleccionar aleatorio</button>
+          </div>
+        </div>
+
+        <button id="btnIniciarSeleccion" style="margin-top: 20px;">Iniciar batalla</button>
       </div>
     </div>
 
-    <!-- Combate 3 -->
-    <div class="pelea">
-      <div class="imagen">
-        <img src="../assets/img/ultron.jpg" alt="Jugador 5" />
-      </div>
-      <span class="vs"><div class="texto-fuego">VS</div></span>
-      <div class="imagen">
-        <img src="/assets/img/ultron.jpg" alt="Jugador 6" />
+    <!-- Modal de batalla -->
+    <div id="modal-batalla" class="modal">
+      <div class="modal-content">
+        <span class="close" id="cerrar-modal-batalla">&times;</span>
+        <h2>¡La batalla va a comenzar!</h2>
+
+        <button id="btnIniciarBatalla" style="margin-bottom: 20px;">Comenzar batalla</button>
+
+        <div class="combate-personajes">
+          <div class="personaje-seleccionado" id="jugador1-info">
+            <div id="carta-jugador1" class="carta"></div>
+            <div class="barra-vida">
+              <div id="vida-barra-1" class="vida-barra" style="width: 100%;"></div>
+              <span id="vida-texto-1">Vida: 0 / 0</span>
+            </div>
+            <button id="btn-ataque-1">Atacar</button>
+          </div>
+
+          <div class="personaje-seleccionado" id="jugador2-info">
+            <div id="carta-jugador2" class="carta"></div>
+            <div class="barra-vida">
+              <div id="vida-barra-2" class="vida-barra" style="width: 100%;"></div>
+              <span id="vida-texto-2">Vida: 0 / 0</span>
+            </div>
+            <button id="btn-ataque-2">Atacar</button>
+          </div>
+        </div>
+
+        <div id="logCombate" class="log-combate"></div>
       </div>
     </div>
-  </div>
 
-  <!-- Modal de combate -->
-  <div id="modal-combate" class="modal">
-    <div class="modal-content">
-      <span class="close" id="cerrar-modal">&times;</span>
-      <h2>Selecciona tus personajes</h2>
-      <div class="seleccion-jugadores">
-       <div class="jugador" id="jugador1">
-  <h3>Jugador 1</h3>
-  <div class="tarjetas" id="tarjetas-jugador1"></div>
-  <button class="btn-aleatorio" onclick="seleccionarAleatorio(1)">Seleccionar aleatorio</button>
-</div>
+  </main>
 
-<div class="jugador" id="jugador2">
-  <h3>Jugador 2</h3>
-  <div class="tarjetas" id="tarjetas-jugador2"></div>
-  <button class="btn-aleatorio" onclick="seleccionarAleatorio(2)">Seleccionar aleatorio</button>
-</div>
-    </div>
-  </div>
-
-  <!-- Modal de batalla (nuevo) -->
-  <div id="modal-batalla" class="modal">
-    <div class="modal-content">
-      <span class="close" id="cerrar-modal-batalla">&times;</span>
-      <h2>¡La batalla va a comenzar!</h2>
-      <div class="combate-personajes">
-        <div class="personaje-seleccionado" id="jugador1-info"></div>
-        <div class="personaje-seleccionado" id="jugador2-info"></div>
-      </div>
-      <button id="btnIniciarTurno">Iniciar Batalla</button>
-      <div id="logCombate" class="log-combate"></div>
-    </div>
-  </div>
+  <footer>
+    ©Campuslands 2025, ©MARVEL Comics 2025, todos los derechos reservados. ©DC Comics 2025, todos los derechos reservados.
+  </footer>
 </body>
 </html>

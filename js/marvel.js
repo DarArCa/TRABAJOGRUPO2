@@ -26,7 +26,6 @@ class CartasMarvel extends HTMLElement {
           box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
           border-radius: 10px;
           cursor: default;
-          transition: transform 1s;
           transition: transform 0.4s ease, box-shadow 0.4s ease;
           cursor: pointer;
           
@@ -111,8 +110,6 @@ class CartasMarvel extends HTMLElement {
           font-size: 0.8rem;
           color: #666;
         }
-          
-
       </style>
       
       <div class="card">
@@ -221,57 +218,73 @@ const personajesMarvel = [
 
 customElements.define('cartas-marvel', CartasMarvel);
 
-//busqueda-marvel
-class SearchBox extends HTMLElement {
-  constructor() {
-    super();
-    this.attachShadow({ mode: 'open' });
+// //busqueda-marvel
+// class SearchBox extends HTMLElement {
+//   constructor() {
+//     super();
+//     this.attachShadow({ mode: 'open' });
 
-    // Estilo del componente
-    this.shadowRoot.innerHTML = /* HTML */`
-      <style>
-        .search-box {
-        margin-left: 10%;
-        margin-right: 10%;
-        margin-bottom: 4rem;
-        padding: 10px;
-        }
+//     // Estilo del componente
+//     this.shadowRoot.innerHTML = /* HTML */`
+//       <style>
+//         .search-box input {
+//           padding: 10px 20px;
+//           font-size: 1rem;
+//           border-radius: 8px;
+//           border: none;
+//           width: 300px;
+//           max-width: 90%;
+//           box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+//         }
+//         button {
+//           background: linear-gradient(135deg, #1a1aff, #8a00e6); /* mezcla de colores tipo cómic */
+//           color: white;
+//           font-weight: bold;
+//           font-size: 1.1rem;
+//           padding: 12px 24px;
+//           border: none;
+//           border-radius: 12px;
+//           box-shadow: 0 0 12px rgba(0, 0, 0, 0.5), 0 0 8px #1a1aff;
+//           cursor: pointer;
+//           transition: transform 0.2s ease, box-shadow 0.2s ease;
+//         }
 
-        input[type="text"] {
-        display: flex;
-        align-items: center;
-        margin-left: auto;
-        margin-right: auto;
-        width: 100%;
-        height: 50px;
-        }
-      </style>
-      <div class="search-box">
-        <input type="text" placeholder="🔍 Buscar personaje por seudonimo..." />
-      </div>
-    `;
-  }
+//         button:hover {
+//           transform: scale(1.05);
+//           box-shadow: 0 0 20px rgba(0, 0, 0, 0.7), 0 0 12px #ff0044;
+//         }
 
-  connectedCallback() {
-    const input = this.shadowRoot.querySelector('input');
-    input.addEventListener('input', (e) => {
-      const valor = e.target.value;
-      this.dispatchEvent(new CustomEvent('input', {
-        detail: valor,
-        bubbles: true,
-        composed: true
-      }));
-      const fakeInput = document.querySelector('#fake-search');
-      if (fakeInput) fakeInput.value = valor;
-    });
-  }
-}
-customElements.define('search-box', SearchBox);
+//         button:active {
+//           transform: scale(0.98);
+//           box-shadow: inset 0 0 10px #000;
+//         }
+//       </style>
+//       <div class="search-box">
+//         <input type="text" placeholder="🔍 Buscar personaje por seudonimo..." />
+//       </div>
+//     `;
+//   }
 
-document.querySelector("search-box").addEventListener("input", (e) => {
-  const searchText = e.detail.toLowerCase();
-  document.querySelectorAll(".cartas-marvel").forEach(hero => {
-    const name = hero.querySelector("nombre").textContent.toLowerCase();
-    hero.style.display = name.includes(searchText) ? "block" : "none";
-  });
-});
+//   connectedCallback() {
+//     const input = this.shadowRoot.querySelector('input');
+//     input.addEventListener('input', (e) => {
+//       const valor = e.target.value;
+//       this.dispatchEvent(new CustomEvent('input', {
+//         detail: valor,
+//         bubbles: true,
+//         composed: true
+//       }));
+//       const fakeInput = document.querySelector('#fake-search');
+//       if (fakeInput) fakeInput.value = valor;
+//     });
+//   }
+// }
+// customElements.define('search-box', SearchBox);
+
+// document.querySelector("search-box").addEventListener("input", (e) => {
+//   const searchText = e.detail.toLowerCase();
+//   document.querySelectorAll(".cartas-marvel").forEach(hero => {
+//     const name = hero.querySelector("nombre").textContent.toLowerCase();
+//     hero.style.display = name.includes(searchText) ? "block" : "none";
+//   });
+// });

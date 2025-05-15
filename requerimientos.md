@@ -8,10 +8,6 @@
   - Revisar toda la estructura de directorios.  
   - Asegurarse de que la carpeta `assets/`y sus archivos esté correctamente organizada (✅ ya está bien según se indica).
 
-- [] **Unificar el contenido en un solo archivo HTML principal**  
-  - Consolidar todo en un solo archivo `.html`.  
-  - Integrar secciones de DC, Marvel, Encuentros, etc., en un mismo archivo para simplificar navegación.
-
 - [ ] **Definir y utilizar correctamente el JSON en archivos `dc.js` y `marvel.js`**  
   - Cargar correctamente los datos desde JSON.  
   - Crear las tarjetas dinámicamente a partir del JSON usando componentes.  
