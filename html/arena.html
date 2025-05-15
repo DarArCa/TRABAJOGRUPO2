@@ -3,20 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- importaciomn de estilos -->
+  
+  <!-- Importación de estilos -->
   <link rel="stylesheet" href="/css/main.css" />
   <link rel="stylesheet" href="/css/arena.css" />
   <link rel="icon" href="/assets/img/logo.png" type="image/png" />
   <title>ARENA DE BATALLA</title>
 
-  <!-- importacion de scripts -->
+  <!-- Importación de scripts -->
   <script src="/js/dc.js" defer></script>
   <script src="/js/marvel.js" defer></script>
   <script src="/js/encuentros.js" defer></script>
-  <!-- arena js
-  <script src="/js/arena.js" defer></script>
-  <link rel="stylesheet" href="../angel2/a.css"> -->
-  
 </head>
 <body>
   <header>
@@ -32,12 +29,12 @@
   <div class="contenedor-arena">
     <!-- Primer combate con botón de acción -->
     <div class="pelea" id="combate-1">
-        <h2>Jugador 1</h2>
+      <h2>Jugador 1</h2>
       <div class="imagen">
         <img src="/assets/img/sentry.jpg" alt="Jugador 1" />
       </div>
       <span class="vs"><div class="texto-fuego">VS</div></span>
-        <h2>Jugador 2</h2>
+      <h2>Jugador 2</h2>
       <div class="imagen">
         <img src="/assets/img/sentry.jpg" alt="Jugador 2" />
       </div>
@@ -72,19 +69,31 @@
       <span class="close" id="cerrar-modal">&times;</span>
       <h2>Selecciona tus personajes</h2>
       <div class="seleccion-jugadores">
-        <div class="jugador" id="jugador1">
-          <h3>Jugador 1</h3>
-          <div class="tarjetas" id="tarjetas-jugador1">
-            <!-- Aquí se insertan dinámicamente las tarjetas -->
-          </div>
-        </div>
-        <div class="jugador" id="jugador2">
-          <h3>Jugador 2</h3>
-          <div class="tarjetas" id="tarjetas-jugador2">
-            <!-- Aquí se insertan dinámicamente las tarjetas -->
-          </div>
-        </div>
+       <div class="jugador" id="jugador1">
+  <h3>Jugador 1</h3>
+  <div class="tarjetas" id="tarjetas-jugador1"></div>
+  <button class="btn-aleatorio" onclick="seleccionarAleatorio(1)">Seleccionar aleatorio</button>
+</div>
+
+<div class="jugador" id="jugador2">
+  <h3>Jugador 2</h3>
+  <div class="tarjetas" id="tarjetas-jugador2"></div>
+  <button class="btn-aleatorio" onclick="seleccionarAleatorio(2)">Seleccionar aleatorio</button>
+</div>
+    </div>
+  </div>
+
+  <!-- Modal de batalla (nuevo) -->
+  <div id="modal-batalla" class="modal">
+    <div class="modal-content">
+      <span class="close" id="cerrar-modal-batalla">&times;</span>
+      <h2>¡La batalla va a comenzar!</h2>
+      <div class="combate-personajes">
+        <div class="personaje-seleccionado" id="jugador1-info"></div>
+        <div class="personaje-seleccionado" id="jugador2-info"></div>
       </div>
+      <button id="btnIniciarTurno">Iniciar Batalla</button>
+      <div id="logCombate" class="log-combate"></div>
     </div>
   </div>
 </body>
