@@ -1,14 +1,18 @@
+/*valores predeterminados*/
+*{
+  padding: 0;
+  margin: 0;
+}
+
+
 /* Estos son los estilo generales que se les aplica al body */
 body {
   margin: 0;
-  background-image: url(https://giffiles.alphacoders.com/223/223284.gif);
+  background-image: url(https://i.pinimg.com/736x/a7/2a/02/a72a022f37c47d8d294e85577737f362.jpg);
   background-size: cover; /* La imagen cubre todo el contenedor */
   background-position: center; /* Centra la imagen */
   background-repeat: no-repeat; /* Evita que la imagen se repita */
   font-family: Arial, sans-serif;
-  background-color: #0B132B;
-  background-size: cover;
-  background-position: center;
   height: auto;
   /* esta animacion es opcional, lo que hace es que con el keyframe genera un fecto como de respiracion de colores con el fondo */
   animation: background_animation 2s infinite alternate;
@@ -151,6 +155,7 @@ main {
   display: flex;
   background-color: rgba(0, 0, 0, 0.5);
   width: 70rem;
+  height: 100%;
   margin-left: 10%;
   margin-right: 10%;
   color: white;
@@ -163,7 +168,7 @@ main {
 
 .imagen-container img {
   width: 20rem;
-  height: auto;
+  height: 100%;
   object-fit: cover;
   transition: all 1s ease;
 }
@@ -197,21 +202,37 @@ h1{
   }
 }
 
+.app{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 footer{
   font-style: italic;
-  
+  display: flex;
+  justify-content: center;
+  background-color: #111113;
+  padding: 3rem;
+  gap: 1rem;
+  color: white;
 }
+
 .botonarena{
-  
-  margin-top: 0%;
+  text-decoration: none;
+  margin-top: 2%;
   width: 160px;
   height: 70px;
 }
+
+
 .botonarena h1 {
   font-size: 17px;
 }
 button{
+  text-decoration: none;
+  display: flex;
   background-color: rgba(61, 22, 99, 0.925);
   height: auto;
   width: auto;
@@ -219,6 +240,18 @@ button{
   padding: 10px;
   border-style: double;
   border-radius: 20px 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+/*animacion de hover para el boton de home*/
+.botonarena:hover{
+  text-decoration: none;
+  transform: translateY(-5px);
+  transition: all 0.3s ease;
+  box-shadow: 30px 30px 30px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  background: linear-gradient(to bottom, #fad2fd, rgba(61, 22, 99, 0.925));
 }
 /*jueguen con los colores del texto del index*/
 @keyframes fuego {
