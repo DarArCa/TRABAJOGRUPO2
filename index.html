@@ -5,30 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hero Arena</title>
   <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
-  <script src="js/main.js" defer></script>
-
-<!--el de arriba es un tipo de letra especial-->
+  <!--el de arriba es un tipo de letra especial-->
+  <!-- esto es para colocar el icono en la parte de la pestaña -->
   <link rel="shortcut icon" href="assets/img/logo.png" type="image/x-icon">
-  <link rel="stylesheet" href="css/main.css" />
-  <!-- este codigo comentado lo considere inecesario -->
-  <!-- <link rel="icon" href="/assets/img/logo.png" type="image/png"> -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Gravitas+One&family=Marvel:ital,wght@0,400;0,700;1,400;1,700&family=Tagesschrift&display=swap" rel="stylesheet">
+  <!-- se comentan las fuentes porque en realidad no cambian nada en el programa -->
+  <!-- <link rel="preconnect" href="https://fonts.googleapis.com"> -->
+  <!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Gravitas+One&family=Marvel:ital,wght@0,400;0,700;1,400;1,700&family=Tagesschrift&display=swap" rel="stylesheet"> -->
+  <!-- importacion de los estilos y el script base -->
+  <link rel="stylesheet" href="css/main.css"/>
+  <script src="js/main.js" defer></script>
 </head>
 <header>
+    <!-- logo de la parte del header de la pagina -->
     <img id="logo" src="/assets/img/logo.png" alt="Logo">
     <nav>
+      <!-- esta barra de navegacion es de los botones principales del header -->
       <button id="btn-home" class="nav-button active">Home</button>
       <a href="/html/dc.html"><button id="btn-dc" class="nav-button">DC</button></a>
-      <!-- TODO: en esta parte los botones marvel y arena dirigen a la misma pagina cuando deberian de ser paginas diferentes  -->
       <a href="/html/marvel.html"><button id="btn-marvel" class="nav-button">Marvel</button></a>
       <a href="/html/arena.html"><button id="btn-arena" class="nav-button">Arena</button></a>
     </nav>
   </header>
 <body>
+  <!-- insertar audi oal cargar la pagina de musica epica -->
   <audio src="/assets/sound/Heroes-yt-audio.mp3" autoplay loop ></audio>
   <main id="app" class="app">
+    <!-- todo este div ocntiene el contenido de la parte con un fondo medianamente oscuro y un mensaje de bienvenida -->
     <div class="homecont">
       <div class="imagen-container">
         <div class="contenedortranspa">
