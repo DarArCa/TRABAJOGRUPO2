@@ -102,6 +102,7 @@ class Cartasdc extends HTMLElement {
           cursor: default;
           transition: transform 0.4s ease, box-shadow 0.4s ease;
           cursor: pointer;
+          scrollbar-width: none;
         }
         .card:hover {
           transform: translateY(-10px) scale(1.03) rotateZ(1deg);

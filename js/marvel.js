@@ -102,7 +102,7 @@ class CartasMarvel extends HTMLElement {
           cursor: default;
           transition: transform 0.4s ease, box-shadow 0.4s ease;
           cursor: pointer;
-          
+          scrollbar-width: none;
         }
         .card:hover {
           transform: translateY(-10px) scale(1.03) rotateZ(1deg);
@@ -183,6 +183,39 @@ class CartasMarvel extends HTMLElement {
         .stat-label {
           font-size: 0.8rem;
           color: #666;
+        }
+        @media (max-width: 768px) {
+          :host {
+            max-width: 14rem;
+            height: 22rem;
+            margin: 0.6rem;
+          }
+          
+          .card-content {
+            padding: 0.8rem;
+          }
+          
+          #nombre, #nombreClave {
+            font-size: 1rem;
+            margin-bottom: 3px;
+          }
+          
+          #universo {
+            font-size: 0.85rem;
+          }
+          
+          .info-label {
+            margin-top: 8px;
+            font-size: 0.9rem;
+          }
+          
+          .stat-value {
+            font-size: 1rem;
+          }
+          
+          .stat-label {
+            font-size: 0.7rem;
+          }
         }
       </style>
       
