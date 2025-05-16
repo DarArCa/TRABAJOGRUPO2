@@ -1,3 +1,77 @@
+// Modificar para tener datos completos
+const personajesMarvel = [
+  {
+    id: 1,
+    universo: "Marvel",
+    nombre: "Tony Stark",
+    nombreClave: "Iron Man",
+    descripcion: "Genio millonario con una armadura de alta tecnología.",
+    trajes: ["Mark I", "Mark XLII", "Endgame"],
+    ataque1: 27,
+    ataque2: 20,
+    ataque3: 30,
+    debilidad: "Dependencia tecnológica",
+    resistencia: 700,
+    imagen: "/assets/img/iron_man.jpg"
+  },
+  {
+    id: 2,
+    universo: "Marvel",
+    nombre: "Peter Parker",
+    nombreClave: "Spiderman",
+    descripcion: "Joven héroe con habilidades arácnidas y sentido arácnido.",
+    trajes: ["Clásico", "Iron Spider", "Negro"],
+    ataque1: 45,
+    ataque2: 28,
+    ataque3: 30,
+    debilidad: "Inexperiencia",
+    resistencia: 50,
+    imagen: "/assets/img/spiderman.jpg"
+  },
+  {
+    id: 3,
+    universo: "Marvel",
+    nombre: "Marc Spector",
+    nombreClave: "Moon Knight",
+    descripcion: "Guardián nocturno con poderes de Khonshu.",
+    trajes: ["Clásico", "Mr. Knight", "Armado"],
+    ataque1: 25,
+    ataque2: 30,
+    ataque3: 19,
+    debilidad: "Trastorno de identidad",
+    resistencia: 60,
+    imagen: "/assets/img/moon_knight.jpg"
+  },
+  {
+    id: 4,
+    universo: "Marvel",
+    nombre: "Matt Murdock",
+    nombreClave: "Daredevil",
+    descripcion: "Abogado ciego con sentidos aumentados que lucha contra el crimen.",
+    trajes: ["Rojo", "Negro", "Amarillo"],
+    ataque1: 27,
+    ataque2: 17,
+    ataque3: 20,
+    debilidad: "Humano sin poderes",
+    resistencia: 40,
+    imagen: "/assets/img/daredevil.jpg"
+  },
+  {
+    id: 5,
+    universo: "Marvel",
+    nombre: "Eddie Brock",
+    nombreClave: "Venom",
+    descripcion: "Simbiote con habilidades de fuerza sobrehumana y regeneración.",
+    trajes: ["Clásico", "Anti-Venom", "King in Black"],
+    ataque1: 29,
+    ataque2: 34,
+    ataque3: 20,
+    debilidad: "Sonido y fuego",
+    resistencia: 80,
+    imagen: "/assets/img/venom.jpg"
+  }
+];
+
 class CartasMarvel extends HTMLElement {
   constructor() {
     super();
@@ -191,7 +265,6 @@ class CartasMarvel extends HTMLElement {
   }
   
   loadAdditionalData(nombre, nombreClave) {
-
     fetch('./data/db.json')
       .then(response => response.json())
       .then(data => {
@@ -205,16 +278,19 @@ class CartasMarvel extends HTMLElement {
         }
       })
   }
+  
+  updateCardWithFullData(personaje) {
+    const shadow = this.shadowRoot;
+    
+    // Actualizar estadísticas
+    shadow.getElementById('ataque-value').textContent = personaje.ataque1;
+    shadow.getElementById('fuerza-value').textContent = personaje.ataque2;
+    shadow.getElementById('damage-value').textContent = personaje.resistencia;
+    
+    // Actualizar debilidad
+    shadow.getElementById('debilidad-value').textContent = personaje.debilidad;
+  }
 }
-//lo mismo aqui
-// Ejemplo: en carta-marvel.js
-const personajesMarvel = [
-  { nombre: "Moon Knight", imagen: "/assets/img/moon_knight.jpg" },
-  { nombre: "Venom", imagen: "/assets/img/venom.jpg" },
-  { nombre: "Spiderman", imagen: "/assets/img/spiderman.jpg" },
-  { nombre: "Iron Man", imagen: "/assets/img/iron_man.jpg" },
-  { nombre: "Daredevil", imagen: "/assets/img/daredevil.jpg" }
-];
 
 customElements.define('cartas-marvel', CartasMarvel);
 

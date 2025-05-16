@@ -48,3 +48,16 @@
 - [ ] **Agregar sonidos, efectos o mejoras visuales para la batalla (si hay tiempo)**  
   - Agregar efectos de sonido para ataques.  
   - Hacer que las ventanas emergentes tengan estilo llamativo.
+
+
+
+
+
+
+
+modificar resistencia y ataque JSON
+rutas de imagenes 
+responsive
+comentarios 
+barra de busqueda 
+integrar JSON a las cartas

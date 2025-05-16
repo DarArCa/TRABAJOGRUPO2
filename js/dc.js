@@ -1,3 +1,77 @@
+// Modificar para tener datos completos
+const personajesDC = [
+  {
+    id: 6,
+    universo: "DC",
+    nombre: "Bruce Wayne",
+    nombreClave: "Batman",
+    descripcion: "Detective experto con habilidades de combate y tecnología avanzada.",
+    trajes: ["Clásico", "Arkham", "Justice League"],
+    ataque1: 25,
+    ataque2: 38,
+    ataque3: 30,
+    debilidad: "Humano sin poderes",
+    resistencia: 80,
+    imagen: "/assets/img/batman.jpg"
+  },
+  {
+    id: 7,
+    universo: "DC",
+    nombre: "Unknown",
+    nombreClave: "Joker",
+    descripcion: "El príncipe payaso del crimen, impredecible y peligroso.",
+    trajes: ["Morado clásico", "The Dark Knight", "Arkham"],
+    ataque1: 27,
+    ataque2: 26,
+    ataque3: 30,
+    debilidad: "Locura impredecible",
+    resistencia: 30,
+    imagen: "/assets/img/guason.jpg"
+  },
+  {
+    id: 8,
+    universo: "DC",
+    nombre: "Hal Jordan",
+    nombreClave: "Linterna Verde",
+    descripcion: "Miembro del cuerpo intergaláctico con el poder del anillo.",
+    trajes: ["Clásico", "New 52", "Green Lantern Corps"],
+    ataque1: 28,
+    ataque2: 30,
+    ataque3: 20,
+    debilidad: "Miedo",
+    resistencia: 35,
+    imagen: "/assets/img/greenlintern.jpg"
+  },
+  {
+    id: 9,
+    universo: "DC",
+    nombre: "Barry Allen",
+    nombreClave: "Flash",
+    descripcion: "El hombre más rápido del mundo, maestro de la velocidad.",
+    trajes: ["Clásico", "Flashpoint", "Serie CW"],
+    ataque1: 27,
+    ataque2: 38,
+    ataque3: 29,
+    debilidad: "Impulsividad",
+    resistencia: 40,
+    imagen: "/assets/img/flash.jpg"
+  },
+  {
+    id: 10,
+    universo: "DC",
+    nombre: "Clark Kent",
+    nombreClave: "Superman",
+    descripcion: "Hombre de acero con fuerza, vuelo y visión láser.",
+    trajes: ["Clásico", "Black Suit", "Injustice"],
+    ataque1: 47,
+    ataque2: 40,
+    ataque3: 39,
+    debilidad: "Kryptonita",
+    resistencia: 100,
+    imagen: "/assets/img/superman.jpg"
+  }
+];
+
 class Cartasdc extends HTMLElement {
   constructor() {
     super();
@@ -109,6 +183,39 @@ class Cartasdc extends HTMLElement {
           font-size: 0.8rem;
           color: #666;
         }
+        @media (max-width: 768px) {
+          :host {
+            max-width: 14rem;
+            height: 22rem;
+            margin: 0.6rem;
+          }
+          
+          .card-content {
+            padding: 0.8rem;
+          }
+          
+          #nombre, #nombreClave {
+            font-size: 1rem;
+            margin-bottom: 3px;
+          }
+          
+          #universo {
+            font-size: 0.85rem;
+          }
+          
+          .info-label {
+            margin-top: 8px;
+            font-size: 0.9rem;
+          }
+          
+          .stat-value {
+            font-size: 1rem;
+          }
+          
+          .stat-label {
+            font-size: 0.7rem;
+          }
+        }
       </style>
 
       <div class="card">
@@ -190,7 +297,6 @@ class Cartasdc extends HTMLElement {
   }
   
   loadAdditionalData(nombre, nombreClave) {
-
     fetch('./data/db.json')
       .then(response => response.json())
       .then(data => {
@@ -204,17 +310,18 @@ class Cartasdc extends HTMLElement {
         }
       })
   }
+  
+  updateCardWithFullData(personaje) {
+    const shadow = this.shadowRoot;
+    
+    // Actualizar estadísticas
+    shadow.getElementById('ataque-value').textContent = personaje.ataque1;
+    shadow.getElementById('fuerza-value').textContent = personaje.ataque2;
+    shadow.getElementById('damage-value').textContent = personaje.resistencia;
+    
+    // Actualizar debilidad
+    shadow.getElementById('debilidad-value').textContent = personaje.debilidad;
+  }
 }
 
-//sebastian puedes editar esto con las imagenes y nombres de cada uno
-// Ejemplo: en carta-dc.js
-const personajesDC = [
-  { nombre: "Batman", imagen: "/assets/img/batman.jpg" },
-  { nombre: "Superman", imagen: "/assets/img/superman.jpg" },
-  { nombre: "Flash", imagen: "/assets/img/flash.jpg" },
-  { nombre: "Joker", imagen: "/assets/img/guason.jpg" },
-  { nombre: "Green Lantern", imagen: "/assets/img/greenlintern.jpg" }
-];
-
 customElements.define('cartas-dc', Cartasdc);
-

@@ -91,43 +91,30 @@
           </div>
         </div>
 
-        <button id="btnIniciarSeleccion">Iniciar batalla</button>
+        <!-- Ya no necesitamos este botón, pero lo dejamos comentado por si necesitas volver a usarlo -->
+        <!-- <button id="btnIniciarSeleccion">Iniciar batalla</button> -->
       </div>
     </div>
 
-    <!-- Modal de batalla -->
-    <div id="modal-batalla" class="modal">
-      <div class="modal-content">
-        <span class="close" id="cerrar-modal-batalla">&times;</span>
-        <h2>¡La batalla va a comenzar!</h2>
+ <!-- Modal de batalla -->
+<div id="modal-batalla" class="modal">
+  <div class="modal-content">
+    <span class="close" id="cerrar-modal-batalla">&times;</span>
+    <h2>¡La batalla ha comenzado!</h2>
 
-      <!-- le quité el stily para colocarlo en el arena Css con el id -->
-      <button id="btnIniciarBatalla">Comenzar batalla</button>
-        <div class="combate-personajes">
-          <div class="personaje-seleccionado" id="jugador1-info">
-            <div id="carta-jugador1" class="carta"></div>
-            <div class="barra-vida">
-              <!-- aca tambien le quité los estilos -->
-              <div id="vida-barra-1" class="vida-barra"></div>
-              <span id="vida-texto-1">Vida: 0 / 0</span>
-            </div>
-            <button id="btn-ataque-1">Atacar</button>
-          </div>
-
-          <div class="personaje-seleccionado" id="jugador2-info">
-            <div id="carta-jugador2" class="carta"></div>
-            <div class="barra-vida">
-              <div id="vida-barra-2" class="vida-barra" ></div>
-              <span id="vida-texto-2">Vida: 0 / 0</span>
-            </div>
-            <button id="btn-ataque-2">Atacar</button>
-          </div>
-        </div>
-
-        <div id="logCombate" class="log-combate"></div>
+    <div class="combate-personajes">
+      <div class="personaje-seleccionado" id="jugador1-info">
+        <!-- Contenido generado por JS -->
       </div>
-      
+
+      <div class="personaje-seleccionado" id="jugador2-info">
+        <!-- Contenido generado por JS -->
+      </div>
     </div>
+
+    <div id="logCombate" class="log-combate"></div>
+  </div>
+</div>
 
   </main>
 
