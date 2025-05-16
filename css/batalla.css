@@ -69,7 +69,7 @@
     width: 150px;
   }
   
-  /* Añadir un separador visual entre personajes */
+  /* añadir un separador visual entre personajes */
   .batalla-contenedor::after {
     content: "VS";
     display: block;

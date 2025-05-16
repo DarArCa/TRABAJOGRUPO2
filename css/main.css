@@ -11,11 +11,11 @@ body {
   background-image: url(https://i.pinimg.com/736x/a7/2a/02/a72a022f37c47d8d294e85577737f362.jpg);
   background-size: cover; /* La imagen cubre todo el contenedor */
   background-position: center; /* Centra la imagen */
-  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  background-repeat: repeat; /* Evita que la imagen se repita */
   /* fuente principal */
   font-family: 'Montserrat', Arial, sans-serif;
   /* hace que el height se acomode automaticamente  */
-  height: auto;
+  height: 100%;
 }
 
 .heroes {
@@ -407,7 +407,7 @@ footer{
 }
 
 
-
+/*reponsividad*/
 @media (min-width: 768px) and (max-width: 1550px) {
   #logo {
     width: 4.5rem;
