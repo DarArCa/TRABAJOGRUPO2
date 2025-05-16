@@ -34,6 +34,20 @@ class SearchBox extends HTMLElement {
           box-shadow: 0 0 12px rgba(17, 17, 17, 0.7);
           background-color: #ffffff;
         }
+
+        @media (max-width: 768px) {
+          .search-box {
+            max-width: 90%;
+            margin: 1.5rem auto 3rem auto;
+            padding: 0.5rem;
+          }
+          
+          input[type="text"] {
+            height: 3rem;
+            font-size: 0.6rem;
+            padding: 0 1rem;
+          }
+        }
       </style>
 
       <div class="search-box">

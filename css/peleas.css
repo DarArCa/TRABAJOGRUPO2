@@ -74,7 +74,6 @@ button {
   font-size: 1rem;
   cursor: pointer;
   border-radius: 0.5rem;
-  transition: background 0.3s;
 }
 
 button:hover {
@@ -112,4 +111,50 @@ button:hover {
 #modalVictoria button {
   margin-top: 1rem;
   background-color: #4caf50;
+}
+
+@media (max-width: 768px) {
+  body {
+    height: auto;
+    min-height: 100vh;
+    padding: 2rem 1rem;
+  }
+  
+  .combate {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+  
+  .jugador {
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .jugador img {
+    width: 160px;
+  }
+  
+  /* Añadir indicador visual entre jugadores */
+  .combate::after {
+    content: "VS";
+    display: block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    font-weight: bold;
+    color: #f44336;
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+    margin: -1rem 0;
+  }
+  
+  /* Ajustar posición de los jugadores */
+  .jugador:first-child {
+    margin-bottom: 3rem;
+  }
+  
+  .jugador:last-child {
+    margin-top: 3rem;
+  }
 }

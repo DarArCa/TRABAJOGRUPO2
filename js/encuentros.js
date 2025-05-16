@@ -1,7 +1,6 @@
 const ruta_JSON = "./data/db.json";
 
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("Documento cargado - encuentros.js");
   
   // Agregar atributos completos a los personajes desde el archivo db.json
   fetch("/data/db.json")
@@ -14,7 +13,6 @@ document.addEventListener("DOMContentLoaded", () => {
         nombre: p.nombre,
         nombreClave: p.nombreClave,
         descripcion: p.descripcion,
-        trajes: p.trajes,
         ataque1: p.ataque1,
         ataque2: p.ataque2,
         ataque3: p.ataque3,
@@ -30,7 +28,6 @@ document.addEventListener("DOMContentLoaded", () => {
         nombre: p.nombre,
         nombreClave: p.nombreClave,
         descripcion: p.descripcion,
-        trajes: p.trajes,
         ataque1: p.ataque1,
         ataque2: p.ataque2,
         ataque3: p.ataque3,
@@ -43,11 +40,9 @@ document.addEventListener("DOMContentLoaded", () => {
       window.personajesDC = personajesDCCompletos;
       window.personajesMarvel = personajesMarvelCompletos;
       
+      // muestra en consola si se cargo correctamente la informacion de los heroes
       console.log("Personajes cargados:", personajesDCCompletos.length + personajesMarvelCompletos.length);
     })
-    .catch(error => {
-      console.error("Error al cargar personajes:", error);
-    });
   
   const pelea1 = document.querySelector(".pelea");
   const modal = document.getElementById("modal-combate");

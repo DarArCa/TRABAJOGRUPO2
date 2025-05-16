@@ -120,7 +120,8 @@ class CartasMarvel extends HTMLElement {
           backface-visibility: hidden;
           border-radius: 15px;
           overflow: hidden;
-          background-color: #fff;
+          background-color: rgb(0, 0, 0) ;
+          border: 4px solid black;
         }
 
         .card-back {
