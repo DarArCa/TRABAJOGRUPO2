@@ -71,6 +71,7 @@ document.querySelector("search-box").addEventListener("input", (e) => {
     const nombre = hero.querySelector("nombre");
     if (!nombre) return;
 
+
     const nameText = nombre.textContent.toLowerCase();
     hero.style.display = nameText.includes(searchText) ? "block" : "none";
   });

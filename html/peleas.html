@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Batalla - Arena</title>
+  <link rel="stylesheet" href="/css/arena.css" />
+</head>
+<body>
+  <h1>Batalla en curso</h1>
+
+  <div id="arena-batalla" style="display: flex; justify-content: space-around; margin-top: 50px;">
+    <div id="jugador1" style="text-align: center;">
+      <h2 id="nombre-jugador1"></h2>
+      <img id="img-jugador1" src="" alt="" width="200" />
+      <div style="width: 200px; height: 20px; background: #ddd; margin: 10px auto;">
+        <div id="vida-barra-1" style="width: 100%; height: 100%; background: green;"></div>
+      </div>
+      <p id="vida-texto-1"></p>
+      <button id="btn-ataque-1">Atacar</button>
+    </div>
+
+    <div id="jugador2" style="text-align: center;">
+      <h2 id="nombre-jugador2"></h2>
+      <img id="img-jugador2" src="" alt="" width="200" />
+      <div style="width: 200px; height: 20px; background: #ddd; margin: 10px auto;">
+        <div id="vida-barra-2" style="width: 100%; height: 100%; background: red;"></div>
+      </div>
+      <p id="vida-texto-2"></p>
+      <button id="btn-ataque-2">Atacar</button>
+    </div>
+  </div>
+
+  <div id="logCombate" style="max-width: 600px; margin: 30px auto; border: 1px solid #ccc; padding: 10px; height: 150px; overflow-y: auto;"></div>
+
+  <script>
+    // Cargar personajes desde localStorage
+    const jugador1 = JSON.parse(localStorage.getItem("jugador1"));
+    const jugador2 = JSON.parse(localStorage.getItem("jugador2"));
+
+    if (!jugador1 || !jugador2) {
+      alert("No hay personajes seleccionados. Redirigiendo a la arena...");
+      window.location.href = "arena.html";
+    }
+
+    // Variables de vida actual
+    jugador1.vidaActual = jugador1.resistencia;
+    jugador2.vidaActual = jugador2.resistencia;
+
+    // Mostrar info en la página
+    document.getElementById("nombre-jugador1").textContent = jugador1.nombre;
+    document.getElementById("img-jugador1").src = jugador1.imagen;
+    document.getElementById("vida-texto-1").textContent = `Vida: ${jugador1.vidaActual} / ${jugador1.resistencia}`;
+
+    document.getElementById("nombre-jugador2").textContent = jugador2.nombre;
+    document.getElementById("img-jugador2").src = jugador2.imagen;
+    document.getElementById("vida-texto-2").textContent = `Vida: ${jugador2.vidaActual} / ${jugador2.resistencia}`;
+
+    function actualizarVidaUI() {
+      const vidaBarra1 = document.getElementById("vida-barra-1");
+      const vidaTexto1 = document.getElementById("vida-texto-1");
+      const vidaBarra2 = document.getElementById("vida-barra-2");
+      const vidaTexto2 = document.getElementById("vida-texto-2");
+
+      vidaBarra1.style.width = (jugador1.vidaActual / jugador1.resistencia) * 100 + "%";
+      vidaTexto1.textContent = `Vida: ${jugador1.vidaActual} / ${jugador1.resistencia}`;
+
+      vidaBarra2.style.width = (jugador2.vidaActual / jugador2.resistencia) * 100 + "%";
+      vidaTexto2.textContent = `Vida: ${jugador2.vidaActual} / ${jugador2.resistencia}`;
+    }
+
+    function logMensaje(mensaje) {
+      const log = document.getElementById("logCombate");
+      log.innerHTML += `<p>${mensaje}</p>`;
+      log.scrollTop = log.scrollHeight;
+    }
+
+    function atacar(atacante, defensor, idAtacante) {
+      const ataques = [atacante.ataque1, atacante.ataque2, atacante.ataque3];
+      const daño = ataques[Math.floor(Math.random() * ataques.length)];
+
+      defensor.vidaActual -= daño;
+      if (defensor.vidaActual < 0) defensor.vidaActual = 0;
+
+      actualizarVidaUI();
+      logMensaje(`${atacante.nombre} ataca a ${defensor.nombre} y causa ${daño} de daño.`);
+
+      if (defensor.vidaActual === 0) {
+        alert(`${atacante.nombre} ha ganado la batalla!`);
+        document.getElementById("btn-ataque-1").disabled = true;
+        document.getElementById("btn-ataque-2").disabled = true;
+      }
+    }
+
+    document.getElementById("btn-ataque-1").addEventListener("click", () => {
+      atacar(jugador1, jugador2, "btn-ataque-1");
+    });
+
+    document.getElementById("btn-ataque-2").addEventListener("click", () => {
+      atacar(jugador2, jugador1, "btn-ataque-2");
+    });
+
+  </script>
+</body>
+</html>

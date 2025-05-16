@@ -173,4 +173,26 @@ function mostrarModalBatallaVisual() {
       document.getElementById("btn-atacar").disabled = true;
     }
   });
+
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  // ... tu código existente ...
+
+  const btnIniciarBatalla = document.getElementById("btnIniciarBatalla");
+
+  btnIniciarBatalla.addEventListener("click", () => {
+    if (seleccion.jugador1 && seleccion.jugador2) {
+      // Guardar personajes seleccionados en localStorage
+      localStorage.setItem("jugador1", JSON.stringify(seleccion.jugador1));
+      localStorage.setItem("jugador2", JSON.stringify(seleccion.jugador2));
+
+      // Redirigir a la página de pelea
+      window.location.href = "peleas.html";
+    } else {
+      alert("Por favor selecciona ambos personajes antes de comenzar la batalla.");
+    }
+  });
+
+  // ... resto de tu código ...
+});

@@ -47,3 +47,51 @@
   width: 100%;
   transition: width 0.3s;
 }
+
+/* responsive design para moviles */
+@media (max-width: 767px) {
+  .batalla-contenedor {
+    flex-direction: column;
+    gap: 1rem;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 1rem;
+  }
+  
+  .personaje-lucha {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .personaje-lucha img {
+    width: 150px;
+  }
+  
+  /* Añadir un separador visual entre personajes */
+  .batalla-contenedor::after {
+    content: "VS";
+    display: block;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    margin: 0.5rem 0;
+    text-shadow: 0 0 10px red;
+  }
+  
+  /* Ocultar el segundo personaje inicialmente en el diseño de columna */
+  .personaje-lucha:nth-child(2) {
+    order: 3;
+  }
+  
+  /* Colocar el separador VS en el medio */
+  .batalla-contenedor::after {
+    order: 2;
+  }
+  
+  .vida {
+    width: 90%;
+  }
+}

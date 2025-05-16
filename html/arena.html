@@ -3,16 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="/assets/img/logo.png" type="image/png" />
+  <!-- importacion de estilos y scripts -->
   <link rel="stylesheet" href="/css/main.css" />
   <link rel="stylesheet" href="/css/arena.css" />
-  <link rel="icon" href="/assets/img/logo.png" type="image/png" />
   <title>ARENA DE BATALLA</title>
 
-  <!-- Scripts que cargas (dc.js, marvel.js, encuentros.js) -->
+  <!-- Scripts que se cargan (dc.js, marvel.js, encuentros.js) -->
   <script src="/js/dc.js" defer></script>
   <script src="/js/marvel.js" defer></script>
   <script src="/js/encuentros.js" defer></script>
-  <script src="/js/arena.js" defer></script>
+  <!-- <script src="/js/arena.js" defer></script>-->
 </head>
 <body>
   <header>
@@ -31,47 +32,48 @@
       <div class="pelea" id="combate-1">
         <h2>Jugador 1</h2>
         <div class="imagen" id="img-jugador1">
-          <img src="../assets/img/SupermanClarkkentDCComics01.webp" width="900rem">
+          <img src="../assets/img/SupermanClarkkentDCComics01.webp" width="900rem" alt="SupermanClarkkentDCComics01">
         </div>
 
         <span class="vs"><div class="texto-fuego">VS</div></span>
 
         <h2>Jugador 2</h2>
         <div class="imagen" id="img-jugador2">
-          <img src="../assets/img/ultron2.jpg">
+          <img src="../assets/img/ultron2.jpg" alt="Ultron">
         </div>
       </div>
       <hr>
       <div class="pelea" id="combate-2">
         <h2>Jugador 1</h2>
         <div class="imagen" id="img-jugador1">
-          <img src="../assets/img/SupermanClarkkentDCComics01.webp" width="900rem">
+          <img src="../assets/img/SupermanClarkkentDCComics01.webp" width="900rem" alt="SupermanClarkkentDCComics01">
         </div>
 
         <span class="vs"><div class="texto-fuego">VS</div></span>
 
         <h2>BOT</h2>
         <div class="imagen" id="img-jugador2">
-          <img src="../assets/img/ultron2.jpg">
+          <img src="../assets/img/ultron2.jpg" alt="ultron2">
         </div>
       </div>
       <div class="pelea" id="combate-3">
         <h2>BOT</h2>
         <div class="imagen" id="img-jugador1">
-          <img src="../assets/img/ultron2.jpg">
+          <img src="../assets/img/ultron2.jpg" alt="Ultron">
         </div>
 
         <span class="vs"><div class="texto-fuego">VS</div></span>
 
         <h2>BOT</h2>
         <div class="imagen" id="img-jugador2">
-          <img src="../assets/img/ultron2.jpg">
+          <img src="../assets/img/ultron2.jpg" alt="Ultron ">
         </div>
       </div>
     </div>
 
     <!-- Modal selección personajes -->
-    <div id="modal-combate" class="modal" style="display:none;">
+    <!-- quité el style="display:none;" y lo puse en el css de arena en el id modal-combate para que no salga error en el html -->
+    <div id="modal-combate" class="modal">
       <div class="modal-content">
         <span class="close" id="cerrar-modal">&times;</span>
         <h2>Selecciona tus personajes</h2>
@@ -89,7 +91,7 @@
           </div>
         </div>
 
-        <button id="btnIniciarSeleccion" style="margin-top: 20px;">Iniciar batalla</button>
+        <button id="btnIniciarSeleccion">Iniciar batalla</button>
       </div>
     </div>
 
@@ -99,13 +101,14 @@
         <span class="close" id="cerrar-modal-batalla">&times;</span>
         <h2>¡La batalla va a comenzar!</h2>
 
-        <button id="btnIniciarBatalla" style="margin-bottom: 20px;">Comenzar batalla</button>
-
+      <!-- le quité el stily para colocarlo en el arena Css con el id -->
+      <button id="btnIniciarBatalla">Comenzar batalla</button>
         <div class="combate-personajes">
           <div class="personaje-seleccionado" id="jugador1-info">
             <div id="carta-jugador1" class="carta"></div>
             <div class="barra-vida">
-              <div id="vida-barra-1" class="vida-barra" style="width: 100%;"></div>
+              <!-- aca tambien le quité los estilos -->
+              <div id="vida-barra-1" class="vida-barra"></div>
               <span id="vida-texto-1">Vida: 0 / 0</span>
             </div>
             <button id="btn-ataque-1">Atacar</button>
@@ -114,7 +117,7 @@
           <div class="personaje-seleccionado" id="jugador2-info">
             <div id="carta-jugador2" class="carta"></div>
             <div class="barra-vida">
-              <div id="vida-barra-2" class="vida-barra" style="width: 100%;"></div>
+              <div id="vida-barra-2" class="vida-barra" ></div>
               <span id="vida-texto-2">Vida: 0 / 0</span>
             </div>
             <button id="btn-ataque-2">Atacar</button>
