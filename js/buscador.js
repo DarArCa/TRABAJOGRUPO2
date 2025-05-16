@@ -37,7 +37,7 @@ class SearchBox extends HTMLElement {
       </style>
 
       <div class="search-box">
-        <input type="text" placeholder="🔍 Buscar personaje por seudonimo..." />
+        <input type="text" placeholder="🔍 Buscar personaje por seudonimo o nombre clave..." />
       </div>
     `;
   }

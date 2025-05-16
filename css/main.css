@@ -2,8 +2,8 @@
 *{
   padding: 0;
   margin: 0;
+  
 }
-
 
 /* Estos son los estilo generales que se les aplica al body */
 body {
@@ -12,10 +12,8 @@ body {
   background-size: cover; /* La imagen cubre todo el contenedor */
   background-position: center; /* Centra la imagen */
   background-repeat: no-repeat; /* Evita que la imagen se repita */
-  font-family: Arial, sans-serif;
+  font-family: 'Montserrat', Arial, sans-serif;
   height: auto;
-  /* esta animacion es opcional, lo que hace es que con el keyframe genera un fecto como de respiracion de colores con el fondo */
-  animation: background_animation 2s infinite alternate;
 }
 
 .heroes {
@@ -32,15 +30,6 @@ body {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-}
-
-@keyframes background_animation {
-  0% {
-    background-color: #0b132b;
-  }
-  100% {
-    background-color: #0f1a3b;
-  }
 }
 
 header {
@@ -67,6 +56,14 @@ header {
     opacity: 10;
     transform: translateY(0);
   }
+}
+
+hr{
+  border: none;
+  height: 3px;
+  background-color: #ff6b6b;
+  margin: 20px 0;
+  border-radius: 2px;
 }
 
 .contenedortranspa {
@@ -160,6 +157,7 @@ main {
   align-items: center;
 }
 
+/* toda esta parte es la de la pagina principal con el logo principal y el texto de bienvenida */
 .homecont{
   display: flex;
   background-color: rgba(0, 0, 0, 0.5);
@@ -191,6 +189,8 @@ main {
   align-items: center;
   justify-content: center;
 }
+
+
 
 h1{
   font-family: "Gravitas One", serif;
@@ -233,35 +233,45 @@ footer{
   height: 100%;
 }
 /*boton del inicio para llevar a arena directamente*/
-.botonarena{
-  text-decoration: none;
-  margin-top: 2%;
-  width: 100px;
+.botonarena {
   display: flex;
-  background-color: rgba(61, 22, 99, 0.925);
-  background: linear-gradient(to bottom, #272027, rgba(61, 22, 99, 0.925));
-  height: auto;
-  border-bottom: #0b132b;
-  padding: 2rem;
-  border-radius: 20px 20px;
   align-items: center;
   justify-content: center;
+  width: 160px;
+  padding: 1.5rem;
+  margin-top: 2%;
+  background: linear-gradient(135deg, #3a1c6c, rgba(61, 22, 99, 0.925));
   color: white;
-}
-
-.botonarena a{
-  color: white;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(61, 22, 99, 0.4);
   text-decoration: none;
-}
-
-/*animacion de hover para el boton de home*/
-.botonarena:hover{
-  text-decoration: none;
-  transform: translateY(-5px);
+  font-weight: bold;
   transition: all 0.3s ease;
-  box-shadow: 30px 30px 30px rgba(0, 0, 0, 0.2);
+}
+
+.botonarena a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+.botonarena:hover {
+  transform: translateY(-5px);
+  background: linear-gradient(135deg, #4e2a8e, #7b42c3);
+  box-shadow: 0 12px 25px rgba(61, 22, 99, 0.6);
   cursor: pointer;
-  background: linear-gradient(to bottom, #fad2fd, rgba(61, 22, 99, 0.925));
+}
+
+.botonarena:active {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(61, 22, 99, 0.4);
+}
+
+@media (max-width: 768px) {
+  .botonarena {
+    width: 140px;
+    padding: 1.2rem;
+  }
 }
 /*jueguen con los colores del texto del index*/
 @keyframes fuego {
